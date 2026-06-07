@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: Lab1 Room.ma
-//Last modified: Sun, Jun 07, 2026 12:38:59 PM
+//Last modified: Sun, Jun 07, 2026 12:45:14 PM
 //Codeset: 1252
 requires maya "2027";
 requires "mtoa" "5.6.0";
@@ -10,12 +10,12 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202603302215-e16e754b0e";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "A9F33B82-4809-557E-CBEF-4F9DB01282B1";
+fileInfo "UUID" "5D2CD95A-4A70-6F46-32E5-ACA77BAB000C";
 createNode transform -s -n "persp";
 	rename -uid "69EBF08C-4822-BF76-98E9-3992E6EC24F6";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -22.214717445568283 20.202429485423227 -25.732758795371012 ;
-	setAttr ".r" -type "double3" -21.338352729469982 -138.99999999998172 0 ;
+	setAttr ".t" -type "double3" -18.356712408639851 23.577387676890961 -26.737779922005476 ;
+	setAttr ".r" -type "double3" -27.93835272946901 -146.19999999998083 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "51A29084-4A9C-9A28-059F-E9A2D20FCBF1";
 	setAttr -k off ".v" no;
@@ -154,14 +154,16 @@ createNode mesh -n "TableMeshShape" -p "TableMesh";
 	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
 	setAttr ".pv" -type "double2" 0.5 0.375 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 62 ".uvst[0].uvsp[0:61]" -type "float2" 0.375 0 0.625 0 0.375
+	setAttr -s 74 ".uvst[0].uvsp[0:73]" -type "float2" 0.375 0 0.625 0 0.375
 		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
 		 0.875 0.25 0.125 0 0.125 0.25 0.375 0 0.625 0 0.625 0.25 0.375 0.25 0.375 0.5 0.625
 		 0.5 0.625 0.75 0.375 0.75 0.625 0 0.875 0 0.875 0.25 0.625 0.25 0.125 0 0.375 0 0.375
 		 0.25 0.125 0.25 0.875 0 0.875 0.25 0.875 0.25 0.875 0 0.625 0.25 0.625 0 0.625 0
 		 0.625 0.25 0.375 0 0.375 0.25 0.375 0.25 0.375 0 0.125 0.25 0.125 0 0.125 0 0.125
 		 0.25 0.875 0 0.875 0 0.875 0 0.875 0 0.625 0 0.625 0 0.625 0 0.625 0 0.375 0 0.375
-		 0 0.375 0 0.375 0 0.125 0 0.125 0 0.125 0 0.125 0;
+		 0 0.375 0 0.375 0 0.125 0 0.125 0 0.125 0 0.125 0 0.625 0.25 0.375 0.5 0.625 0.5
+		 0.375 0.75 0.625 0.75 0.625 0 0.625 0.25 0.375 0 0.375 0.25 0.625 0 0.875 0 0.875
+		 0.25;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
@@ -218,61 +220,61 @@ createNode mesh -n "TableMeshShape" -p "TableMesh";
 		f 4 14 16 -19 -20
 		mu 0 4 27 1 3 28
 		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
+		mu 0 4 2 62 5 4
 		f 4 22 24 -27 -28
-		mu 0 4 4 5 7 6
+		mu 0 4 63 64 7 6
 		f 4 3 11 -1 -11
-		mu 0 4 6 7 9 8
+		mu 0 4 65 66 9 8
 		f 4 -31 -33 -35 -36
-		mu 0 4 1 10 11 3
+		mu 0 4 67 10 11 68
 		f 4 38 40 42 43
-		mu 0 4 26 27 28 29
+		mu 0 4 26 69 70 29
 		f 4 0 13 -15 -13
-		mu 0 4 0 1 15 14
+		mu 0 4 0 71 15 14
 		f 4 -2 17 18 -16
-		mu 0 4 3 2 17 16
+		mu 0 4 62 2 17 16
 		f 4 2 21 -23 -21
 		mu 0 4 4 5 19 18
 		f 4 -4 25 26 -24
-		mu 0 4 7 6 21 20
+		mu 0 4 66 65 21 20
 		f 4 -12 28 30 -30
-		mu 0 4 1 10 23 22
+		mu 0 4 71 72 23 22
 		f 4 -47 48 50 -52
 		mu 0 4 30 31 32 33
 		f 4 -8 33 34 -32
-		mu 0 4 11 3 25 24
+		mu 0 4 73 62 25 24
 		f 4 -55 56 58 -60
 		mu 0 4 34 35 36 37
 		f 4 10 37 -39 -37
-		mu 0 4 12 0 27 26
+		mu 0 4 12 0 69 26
 		f 4 62 64 -67 -68
 		mu 0 4 38 39 40 41
 		f 4 6 41 -43 -40
-		mu 0 4 2 13 29 28
+		mu 0 4 2 13 29 70
 		f 4 70 72 -75 -76
 		mu 0 4 42 43 44 45
 		f 4 -10 44 46 -46
-		mu 0 4 10 11 31 30
+		mu 0 4 72 73 31 30
 		f 4 31 47 -49 -45
-		mu 0 4 11 24 32 31
+		mu 0 4 73 24 32 31
 		f 4 32 49 -51 -48
 		mu 0 4 24 23 33 32
 		f 4 -79 80 82 -84
 		mu 0 4 46 47 48 49
 		f 4 -6 52 54 -54
-		mu 0 4 3 1 35 34
+		mu 0 4 62 71 35 34
 		f 4 86 88 -91 -92
 		mu 0 4 50 51 52 53
 		f 4 35 57 -59 -56
 		mu 0 4 22 25 37 36
 		f 4 -34 53 59 -58
-		mu 0 4 25 3 34 37
+		mu 0 4 25 62 34 37
 		f 4 4 61 -63 -61
 		mu 0 4 0 2 39 38
 		f 4 39 63 -65 -62
-		mu 0 4 2 28 40 39
+		mu 0 4 2 70 40 39
 		f 4 -41 65 66 -64
-		mu 0 4 28 27 41 40
+		mu 0 4 70 69 41 40
 		f 4 -95 96 98 -100
 		mu 0 4 54 55 56 57
 		f 4 8 69 -71 -69
@@ -284,29 +286,29 @@ createNode mesh -n "TableMeshShape" -p "TableMesh";
 		f 4 -42 68 75 -74
 		mu 0 4 29 13 42 45
 		f 4 -29 76 78 -78
-		mu 0 4 23 10 47 46
+		mu 0 4 23 72 47 46
 		f 4 45 79 -81 -77
-		mu 0 4 10 30 48 47
+		mu 0 4 72 30 48 47
 		f 4 51 81 -83 -80
 		mu 0 4 30 33 49 48
 		f 4 -50 77 83 -82
 		mu 0 4 33 23 46 49
 		f 4 29 85 -87 -85
-		mu 0 4 1 22 51 50
+		mu 0 4 71 22 51 50
 		f 4 55 87 -89 -86
 		mu 0 4 22 36 52 51
 		f 4 -57 89 90 -88
 		mu 0 4 36 35 53 52
 		f 4 -53 84 91 -90
-		mu 0 4 35 1 50 53
+		mu 0 4 35 71 50 53
 		f 4 -38 92 94 -94
-		mu 0 4 27 0 55 54
+		mu 0 4 69 0 55 54
 		f 4 60 95 -97 -93
 		mu 0 4 0 38 56 55
 		f 4 67 97 -99 -96
 		mu 0 4 38 41 57 56
 		f 4 -66 93 99 -98
-		mu 0 4 41 27 54 57
+		mu 0 4 41 69 54 57
 		f 4 36 101 -103 -101
 		mu 0 4 12 26 59 58
 		f 4 71 103 -105 -102
@@ -6576,7 +6578,6 @@ createNode mesh -n "ChairMesh1Shape" -p "ChairMesh1";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:1897]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 2 ".ciog[0].cog";
 	setAttr -s 6 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "back";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 41 "f[1]" "f[4:5]" "f[42:45]" "f[48:49]" "f[54:55]" "f[132:133]" "f[150:151]" "f[184:191]" "f[618:621]" "f[624:625]" "f[630:631]" "f[666:669]" "f[672:673]" "f[678:679]" "f[682]" "f[748]" "f[754]" "f[818:819]" "f[826:827]" "f[832:834]" "f[840]" "f[847:849]" "f[853]" "f[859:861]" "f[865]" "f[1754:1755]" "f[1762:1763]" "f[1768:1770]" "f[1776]" "f[1783:1785]" "f[1789]" "f[1795:1797]" "f[1801]" "f[1850:1851]" "f[1858:1859]" "f[1864:1866]" "f[1872]" "f[1879:1881]" "f[1885]" "f[1891:1893]" "f[1897]";
@@ -15203,14 +15204,16 @@ createNode mesh -n "nightstandShape" -p "nightstand";
 	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
 	setAttr ".pv" -type "double2" 0.5 0.375 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 62 ".uvst[0].uvsp[0:61]" -type "float2" 0.375 0 0.625 0 0.375
+	setAttr -s 74 ".uvst[0].uvsp[0:73]" -type "float2" 0.375 0 0.625 0 0.375
 		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
 		 0.875 0.25 0.125 0 0.125 0.25 0.375 0 0.625 0 0.625 0.25 0.375 0.25 0.375 0.5 0.625
 		 0.5 0.625 0.75 0.375 0.75 0.625 0 0.875 0 0.875 0.25 0.625 0.25 0.125 0 0.375 0 0.375
 		 0.25 0.125 0.25 0.875 0 0.875 0.25 0.875 0.25 0.875 0 0.625 0.25 0.625 0 0.625 0
 		 0.625 0.25 0.375 0 0.375 0.25 0.375 0.25 0.375 0 0.125 0.25 0.125 0 0.125 0 0.125
 		 0.25 0.875 0 0.875 0 0.875 0 0.875 0 0.625 0 0.625 0 0.625 0 0.625 0 0.375 0 0.375
-		 0 0.375 0 0.375 0 0.125 0 0.125 0 0.125 0 0.125 0;
+		 0 0.375 0 0.375 0 0.125 0 0.125 0 0.125 0 0.125 0 0.625 0.25 0.375 0.5 0.625 0.5
+		 0.375 0.75 0.625 0.75 0.625 0 0.625 0.25 0.375 0 0.375 0.25 0.625 0 0.875 0 0.875
+		 0.25;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
@@ -15265,61 +15268,61 @@ createNode mesh -n "nightstandShape" -p "nightstand";
 		f 4 14 16 -19 -20
 		mu 0 4 27 1 3 28
 		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
+		mu 0 4 2 62 5 4
 		f 4 22 24 -27 -28
-		mu 0 4 4 5 7 6
+		mu 0 4 63 64 7 6
 		f 4 3 11 -1 -11
-		mu 0 4 6 7 9 8
+		mu 0 4 65 66 9 8
 		f 4 -31 -33 -35 -36
-		mu 0 4 1 10 11 3
+		mu 0 4 67 10 11 68
 		f 4 38 40 42 43
-		mu 0 4 26 27 28 29
+		mu 0 4 26 69 70 29
 		f 4 0 13 -15 -13
-		mu 0 4 0 1 15 14
+		mu 0 4 0 71 15 14
 		f 4 -2 17 18 -16
-		mu 0 4 3 2 17 16
+		mu 0 4 62 2 17 16
 		f 4 2 21 -23 -21
 		mu 0 4 4 5 19 18
 		f 4 -4 25 26 -24
-		mu 0 4 7 6 21 20
+		mu 0 4 66 65 21 20
 		f 4 -12 28 30 -30
-		mu 0 4 1 10 23 22
+		mu 0 4 71 72 23 22
 		f 4 -47 48 50 -52
 		mu 0 4 30 31 32 33
 		f 4 -8 33 34 -32
-		mu 0 4 11 3 25 24
+		mu 0 4 73 62 25 24
 		f 4 -55 56 58 -60
 		mu 0 4 34 35 36 37
 		f 4 10 37 -39 -37
-		mu 0 4 12 0 27 26
+		mu 0 4 12 0 69 26
 		f 4 62 64 -67 -68
 		mu 0 4 38 39 40 41
 		f 4 6 41 -43 -40
-		mu 0 4 2 13 29 28
+		mu 0 4 2 13 29 70
 		f 4 70 72 -75 -76
 		mu 0 4 42 43 44 45
 		f 4 -10 44 46 -46
-		mu 0 4 10 11 31 30
+		mu 0 4 72 73 31 30
 		f 4 31 47 -49 -45
-		mu 0 4 11 24 32 31
+		mu 0 4 73 24 32 31
 		f 4 32 49 -51 -48
 		mu 0 4 24 23 33 32
 		f 4 -79 80 82 -84
 		mu 0 4 46 47 48 49
 		f 4 -6 52 54 -54
-		mu 0 4 3 1 35 34
+		mu 0 4 62 71 35 34
 		f 4 86 88 -91 -92
 		mu 0 4 50 51 52 53
 		f 4 35 57 -59 -56
 		mu 0 4 22 25 37 36
 		f 4 -34 53 59 -58
-		mu 0 4 25 3 34 37
+		mu 0 4 25 62 34 37
 		f 4 4 61 -63 -61
 		mu 0 4 0 2 39 38
 		f 4 39 63 -65 -62
-		mu 0 4 2 28 40 39
+		mu 0 4 2 70 40 39
 		f 4 -41 65 66 -64
-		mu 0 4 28 27 41 40
+		mu 0 4 70 69 41 40
 		f 4 -95 96 98 -100
 		mu 0 4 54 55 56 57
 		f 4 8 69 -71 -69
@@ -15331,29 +15334,29 @@ createNode mesh -n "nightstandShape" -p "nightstand";
 		f 4 -42 68 75 -74
 		mu 0 4 29 13 42 45
 		f 4 -29 76 78 -78
-		mu 0 4 23 10 47 46
+		mu 0 4 23 72 47 46
 		f 4 45 79 -81 -77
-		mu 0 4 10 30 48 47
+		mu 0 4 72 30 48 47
 		f 4 51 81 -83 -80
 		mu 0 4 30 33 49 48
 		f 4 -50 77 83 -82
 		mu 0 4 33 23 46 49
 		f 4 29 85 -87 -85
-		mu 0 4 1 22 51 50
+		mu 0 4 71 22 51 50
 		f 4 55 87 -89 -86
 		mu 0 4 22 36 52 51
 		f 4 -57 89 90 -88
 		mu 0 4 36 35 53 52
 		f 4 -53 84 91 -90
-		mu 0 4 35 1 50 53
+		mu 0 4 35 71 50 53
 		f 4 -38 92 94 -94
-		mu 0 4 27 0 55 54
+		mu 0 4 69 0 55 54
 		f 4 60 95 -97 -93
 		mu 0 4 0 38 56 55
 		f 4 67 97 -99 -96
 		mu 0 4 38 41 57 56
 		f 4 -66 93 99 -98
-		mu 0 4 41 27 54 57
+		mu 0 4 41 69 54 57
 		f 4 36 101 -103 -101
 		mu 0 4 12 26 59 58
 		f 4 71 103 -105 -102
@@ -154357,7 +154360,6 @@ createNode mesh -n "Flower_pot2Shape" -p "Flower_pot2";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:37319]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 2 ".ciog[0].cog";
 	setAttr -s 11 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "booleanIntersection";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 19 "e[51210]" "e[51216]" "e[51221]" "e[51227]" "e[51231]" "e[51237]" "e[51242]" "e[51247]" "e[51252]" "e[51257]" "e[51262]" "e[51267]" "e[51272]" "e[51276]" "e[51282]" "e[51286]" "e[51292]" "e[51295]" "e[51298:51299]";
@@ -284901,15 +284903,15 @@ createNode mesh -n "Book52Shape" -p "Book52";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "0F33A56C-4F23-941C-187A-91A1B4D0E73B";
+	rename -uid "5D308DC5-4BD8-5174-6A7D-14BBBB7BA354";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "67835974-4D3A-919E-3C6B-DA89571647F3";
+	rename -uid "9A115F3B-4383-F8EF-A7B8-A6BD60F9AEE5";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "61B068BF-4E5D-7F72-CBD0-0683B7526230";
+	rename -uid "3ADD410B-4443-107D-624A-878B39F1783A";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "5F4849CA-4F62-C9EB-A3F1-C6A84DFCC0D5";
+	rename -uid "2C79518F-4B41-634A-C0C7-D2860CEC8177";
 	setAttr ".cdl" 2;
 	setAttr -s 3 ".dli[1:2]"  1 2;
 	setAttr -s 3 ".dli";
@@ -284917,7 +284919,7 @@ createNode displayLayer -n "defaultLayer";
 	rename -uid "38A97ADC-4D5E-4FBC-F92C-71B7514EE870";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "3CEC7A90-4BB1-9792-BD8F-EDA3EE8C13CA";
+	rename -uid "E0AC8C1C-4856-496E-E15A-7680D741127C";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "82594AA2-416F-A56F-B89A-8197F4A1C1AC";
 	setAttr ".g" yes;
@@ -285065,8 +285067,6 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "FloorLYR.di" "FloorMesh.do";
 connectAttr "groupId13.id" "ChairMeshShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "ChairMeshShape.iog.og[0].gco";
