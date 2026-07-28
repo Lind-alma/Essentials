@@ -1,14 +1,19 @@
 //Maya ASCII 2027 scene
 //Name: Lab1 Room.ma
-//Last modified: Sat, Jun 13, 2026 09:27:50 PM
+//Last modified: Tue, Jul 28, 2026 12:29:17 PM
 //Codeset: 1252
 file -rdi 1 -ns "Unit4_CurvesLab" -rfn "Unit4_CurvesLabRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Unit4_CurvesLab.ma";
 file -rdi 1 -ns "Sofa" -rfn "SofaRN" -op "v=0;" -typ "mayaAscii" "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes//Sofa.ma";
+file -rdi 1 -ns "OrganicProp" -rfn "OrganicPropRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes//OrganicProp.ma";
 file -r -ns "Unit4_CurvesLab" -dr 1 -rfn "Unit4_CurvesLabRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Unit4_CurvesLab.ma";
 file -r -ns "Sofa" -dr 1 -rfn "SofaRN" -op "v=0;" -typ "mayaAscii" "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes//Sofa.ma";
+file -r -ns "OrganicProp" -dr 1 -rfn "OrganicPropRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes//OrganicProp.ma";
 requires maya "2027";
+requires -nodeType "curveWarp" "curveWarp" "006";
 requires "mtoa" "5.6.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
@@ -16,17 +21,17 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202603302215-e16e754b0e";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "58326FEC-48FF-309B-886B-20A70E3E97DC";
+fileInfo "UUID" "6A371EE4-48AA-FD54-44A7-44B9934268DA";
 createNode transform -s -n "persp";
 	rename -uid "69EBF08C-4822-BF76-98E9-3992E6EC24F6";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -8.5161172556042715 33.068123590806593 -74.553063410478146 ;
-	setAttr ".r" -type "double3" -18.338352729381874 -181.79999999985884 0 ;
+	setAttr ".t" -type "double3" -5.9723493772962133 7.0337127467285017 -4.9826717852884794 ;
+	setAttr ".r" -type "double3" -17.13835272933666 -169.39999999981157 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "51A29084-4A9C-9A28-059F-E9A2D20FCBF1";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 84.794779513424373;
+	setAttr ".coi" 3.8277765235404941;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -284988,8 +284993,37 @@ createNode mesh -n "Sofa:pillow4Shape" -p "Sofa:pillow5";
 	setAttr ".pt[379]" -type "float3" 0 0.41856337 0 ;
 	setAttr ".pt[387]" -type "float3" 0 0.41856334 0 ;
 	setAttr ".db" yes;
+createNode transform -n "OrganicProp:pPlane3";
+	rename -uid "C18D4CBC-4929-ED32-73B7-7BAA7B926C69";
+	setAttr ".t" -type "double3" -3.5144407226700616 -0.080801367075917341 6.6538489323820462 ;
+	setAttr ".r" -type "double3" 0 72.457798141529622 0 ;
+	setAttr ".rp" -type "double3" -0.0057950615882873535 1.2129047189855011 -0.018654971366568684 ;
+	setAttr ".rpt" -type "double3" 2.6020852139652106e-17 0 9.7144514654701197e-17 ;
+	setAttr ".sp" -type "double3" -0.0057950615882873535 1.2129047189855011 -0.018654971366568684 ;
+createNode mesh -n "OrganicProp:pPlane1Shape" -p "OrganicProp:pPlane3";
+	rename -uid "6AA2810C-45A7-1947-F151-609199DCF7E6";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode mesh -n "pPlane1ShapeOrig" -p "OrganicProp:pPlane3";
+	rename -uid "45AB3123-4F7D-2614-9486-50B8A60A180E";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "Unit4_CurvesLabRNfosterParent1";
-	rename -uid "DD00598A-48D9-1FB3-7B9F-509A4C507688";
+	rename -uid "4CE9AC52-43CB-C02A-872B-0887B98B437C";
 createNode transform -n "Unit4_CurvesLab:transform5" -p "Unit4_CurvesLabRNfosterParent1";
 	rename -uid "1EAF243A-4AB9-6C54-4A4A-C1B87D2CD008";
 	setAttr ".v" no;
@@ -285031,7 +285065,7 @@ createNode transform -n "Unit4_CurvesLab:transform1" -p "Unit4_CurvesLabRNfoster
 	rename -uid "8DD13059-4C90-B968-A73B-FA9EB62A6758";
 	setAttr ".v" no;
 createNode fosterParent -n "SofaRNfosterParent1";
-	rename -uid "E94F5A3E-4C87-2A2E-1AA8-949A2D53EA1F";
+	rename -uid "1ABF1BF5-46E3-7D89-8F40-D795D6E65AA0";
 createNode transform -n "Sofa:transform7" -p "SofaRNfosterParent1";
 	rename -uid "F26231CC-4DC0-C041-7363-69B22777261F";
 	setAttr ".v" no;
@@ -285056,16 +285090,57 @@ createNode transform -n "Sofa:transform5" -p "SofaRNfosterParent1";
 createNode transform -n "Sofa:transform1" -p "SofaRNfosterParent1";
 	rename -uid "D9EA3D31-490A-562B-4731-F6991927D8DA";
 	setAttr ".v" no;
+createNode fosterParent -n "OrganicPropRNfosterParent1";
+	rename -uid "73CD5536-4C68-5139-19D9-11849B15BA74";
+createNode transform -n "OrganicProp:transform9" -p "OrganicPropRNfosterParent1";
+	rename -uid "385FAA15-4E86-70A8-1B1C-BBB9734D010D";
+	setAttr ".v" no;
+createNode transform -n "OrganicProp:transform4" -p "OrganicPropRNfosterParent1";
+	rename -uid "BEB1A316-40E5-B17F-A244-C98076DEAB5B";
+	setAttr ".v" no;
+createNode transform -n "OrganicProp:transform5" -p "OrganicPropRNfosterParent1";
+	rename -uid "18001F29-40B5-CD1A-2A89-AC9BE11FDF87";
+	setAttr ".v" no;
+createNode transform -n "OrganicProp:transform3" -p "OrganicPropRNfosterParent1";
+	rename -uid "BF5A25D0-418E-A24A-3C40-CC9CB12F0FFC";
+	setAttr ".v" no;
+createNode transform -n "OrganicProp:transform2" -p "OrganicPropRNfosterParent1";
+	rename -uid "723B4E0E-45FF-132E-2141-449A451B8002";
+	setAttr ".v" no;
+createNode transform -n "OrganicProp:transform6" -p "OrganicPropRNfosterParent1";
+	rename -uid "E0DF2B37-46CD-9A71-E7B9-17A413D97040";
+	setAttr ".v" no;
+createNode transform -n "OrganicProp:transform10" -p "OrganicPropRNfosterParent1";
+	rename -uid "A8EB3192-4012-4448-1605-0EB64998E9E5";
+	setAttr ".v" no;
+createNode transform -n "OrganicProp:transform12" -p "OrganicPropRNfosterParent1";
+	rename -uid "E566C930-42EE-E756-B0D6-62B55F731C2B";
+	setAttr ".v" no;
+createNode transform -n "OrganicProp:transform8" -p "OrganicPropRNfosterParent1";
+	rename -uid "43C9625C-407E-DFE4-B2A1-AE98496050A4";
+	setAttr ".v" no;
+createNode transform -n "OrganicProp:transform7" -p "OrganicPropRNfosterParent1";
+	rename -uid "7DB1C812-47E1-AF3F-6DF2-0F8BF6B8B25A";
+	setAttr ".v" no;
+createNode transform -n "OrganicProp:transform1" -p "OrganicPropRNfosterParent1";
+	rename -uid "515D8C1E-4901-A233-70CC-6CB5D15A582F";
+	setAttr ".v" no;
+createNode transform -n "OrganicProp:transform11" -p "OrganicPropRNfosterParent1";
+	rename -uid "850E2842-48D7-8BF5-2C16-56B9FC73C300";
+	setAttr ".v" no;
+createNode transform -n "OrganicProp:transform13" -p "OrganicPropRNfosterParent1";
+	rename -uid "B4D1B29E-42C5-59B2-EBC2-AFAC7AD8D88E";
+	setAttr ".v" no;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "870575C5-4D79-B554-03BF-B1B1D2B7803C";
+	rename -uid "FF842187-4C05-5EBC-5F14-8584A0E6FD6C";
 	setAttr -s 4 ".lnk";
 	setAttr -s 4 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "A08C0E43-421F-7C6B-FC39-A09E7530EFA3";
+	rename -uid "3092934F-4EC9-5DF5-BA5B-83B2CA23B31A";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "72C7E392-4A34-6E55-2932-92A81FABE32C";
+	rename -uid "7C0BF5B6-42B2-0094-F219-448005A01923";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "BB4AC2E7-44D7-6A95-3805-858CCDBA3BC7";
+	rename -uid "378B916D-40E1-2D0C-B537-76A570FA2E29";
 	setAttr ".cdl" 2;
 	setAttr -s 3 ".dli[1:2]"  1 2;
 	setAttr -s 3 ".dli";
@@ -285073,7 +285148,7 @@ createNode displayLayer -n "defaultLayer";
 	rename -uid "38A97ADC-4D5E-4FBC-F92C-71B7514EE870";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "1DAC0F56-4B27-13DD-978C-51837F7C00B7";
+	rename -uid "EBA8861E-440C-5A1D-8432-F5A707FC36F7";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "82594AA2-416F-A56F-B89A-8197F4A1C1AC";
 	setAttr ".g" yes;
@@ -285219,7 +285294,7 @@ createNode reference -n "Unit4_CurvesLabRN";
 		"Unit4_CurvesLabRN" 1
 		3 "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform5|Unit4_CurvesLab:dirtShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		"Unit4_CurvesLabRN" 72
+		"Unit4_CurvesLabRN" 73
 		0 "|Unit4_CurvesLab:PotShape" "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform1" 
 		"-s -r "
 		0 "|Unit4_CurvesLab:pSphereShape1" "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform7" 
@@ -285255,6 +285330,7 @@ createNode reference -n "Unit4_CurvesLabRN";
 		2 "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform7|Unit4_CurvesLab:pSphereShape1" 
 		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:399]\""
 		
+		2 "|Unit4_CurvesLab:dirt" "translate" " -type \"double3\" 0 0 0"
 		2 "|Unit4_CurvesLab:dirt" "scale" " -type \"double3\" 1 1 1"
 		2 "|Unit4_CurvesLab:dirt|Unit4_CurvesLab:lEAF_2" "scale" " -type \"double3\" 1 1 1"
 		
@@ -285281,15 +285357,15 @@ createNode reference -n "Unit4_CurvesLabRN";
 		2 "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform2|Unit4_CurvesLab:Leaf_Shape1" 
 		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:143]\""
 		
-		3 "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform4|Unit4_CurvesLab:lEAF_Shape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform3|Unit4_CurvesLab:Leaf_Shape3.instObjGroups" 
+		3 "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform2|Unit4_CurvesLab:Leaf_Shape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform7|Unit4_CurvesLab:pSphereShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform1|Unit4_CurvesLab:PotShape.instObjGroups" 
+		3 "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform3|Unit4_CurvesLab:Leaf_Shape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform2|Unit4_CurvesLab:Leaf_Shape1.instObjGroups" 
+		3 "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform4|Unit4_CurvesLab:lEAF_Shape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform1|Unit4_CurvesLab:PotShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "Unit4_CurvesLabRN" "|Unit4_CurvesLab:dirt|Unit4_CurvesLab:dirtShape.outMesh" 
 		"Unit4_CurvesLabRN.placeHolderList[1]" ""
@@ -285496,8 +285572,15 @@ createNode reference -n "SofaRN";
 	setAttr ".phl[58]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"SofaRN"
-		"SofaRN" 0
-		"SofaRN" 88
+		"SofaRN" 4
+		0 "|Sofa:pillow2Shape" "|SofaRNfosterParent1|Sofa:transform7" "-s -r "
+		2 "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape" "intermediateObject" 
+		" 1"
+		5 3 "SofaRN" "|SofaRNfosterParent1|Sofa:transform7|Sofa:pillow2Shape.outMesh" 
+		"SofaRN.placeHolderList[1]" ""
+		5 3 "SofaRN" "|SofaRNfosterParent1|Sofa:transform7|Sofa:pillow2Shape.worldMatrix" 
+		"SofaRN.placeHolderList[2]" ""
+		"SofaRN" 85
 		0 "|Sofa:Sofa_baseShape" "|SofaRNfosterParent1|Sofa:transform1" "-s -r "
 		0 "|Sofa:Soda_topShape" "|SofaRNfosterParent1|Sofa:transform5" "-s -r "
 		0 "|Sofa:cushion_Shape1" "|SofaRNfosterParent1|Sofa:transform4" "-s -r "
@@ -285505,7 +285588,6 @@ createNode reference -n "SofaRN";
 		0 "|Sofa:pillowShape" "|SofaRNfosterParent1|Sofa:transform2" "-s -r "
 		0 "|Sofa:pillow3Shape" "|SofaRNfosterParent1|Sofa:transform6" "-s -r "
 		0 "|Sofa:pillow1Shape" "|SofaRNfosterParent1|Sofa:transform3" "-s -r "
-		0 "|Sofa:pillow2Shape" "|SofaRNfosterParent1|Sofa:transform7" "-s -r "
 		0 "|SofaRNfosterParent1|Sofa:transform1" "|Sofa:Sofa_base" "-s -r "
 		0 "|SofaRNfosterParent1|Sofa:transform5" "|Sofa:Soda_top" "-s -r "
 		0 "|SofaRNfosterParent1|Sofa:transform4" "|Sofa:cushion_1" "-s -r "
@@ -285542,20 +285624,16 @@ createNode reference -n "SofaRN";
 		" 1"
 		2 "|SofaRNfosterParent1|Sofa:transform3|Sofa:pillow1Shape" "intermediateObject" 
 		" 1"
-		2 "|SofaRNfosterParent1|Sofa:transform7|Sofa:pillow2Shape" "intermediateObject" 
-		" 1"
-		3 "|SofaRNfosterParent1|Sofa:transform4|Sofa:cushion_Shape1.instObjGroups" 
+		2 "|Sofa:pillow2" "translate" " -type \"double3\" -3.28009074419332869 2.76827774319932818 -6.55589051691929381"
+		
+		3 "|SofaRNfosterParent1|Sofa:transform8|Sofa:cushion_Shape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|SofaRNfosterParent1|Sofa:transform5|Sofa:Soda_topShape.instObjGroups" 
 		"Sofa:standardSurface1SG.dagSetMembers" "-na"
-		3 "|SofaRNfosterParent1|Sofa:transform8|Sofa:cushion_Shape2.instObjGroups" 
+		3 "|SofaRNfosterParent1|Sofa:transform4|Sofa:cushion_Shape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|SofaRNfosterParent1|Sofa:transform1|Sofa:Sofa_baseShape.instObjGroups" 
 		"Sofa:lambert1SG.dagSetMembers" "-na"
-		5 3 "SofaRN" "|SofaRNfosterParent1|Sofa:transform7|Sofa:pillow2Shape.outMesh" 
-		"SofaRN.placeHolderList[1]" ""
-		5 3 "SofaRN" "|SofaRNfosterParent1|Sofa:transform7|Sofa:pillow2Shape.worldMatrix" 
-		"SofaRN.placeHolderList[2]" ""
 		5 3 "SofaRN" "|SofaRNfosterParent1|Sofa:transform3|Sofa:pillow1Shape.outMesh" 
 		"SofaRN.placeHolderList[3]" ""
 		5 3 "SofaRN" "|SofaRNfosterParent1|Sofa:transform3|Sofa:pillow1Shape.worldMatrix" 
@@ -285626,17 +285704,17 @@ createNode reference -n "SofaRN";
 		""
 		5 4 "SofaRN" "Sofa:lambert1SG.dagSetMembers" "SofaRN.placeHolderList[40]" 
 		""
-		5 4 "SofaRN" "Sofa:lambert1SG.groupNodes" "SofaRN.placeHolderList[41]" 
+		5 3 "SofaRN" "Sofa:lambert1SG.memberWireframeColor" "SofaRN.placeHolderList[41]" 
 		""
-		5 4 "SofaRN" "Sofa:lambert1SG.groupNodes" "SofaRN.placeHolderList[42]" 
+		5 3 "SofaRN" "Sofa:lambert1SG.memberWireframeColor" "SofaRN.placeHolderList[42]" 
 		""
 		5 4 "SofaRN" "Sofa:lambert1SG.groupNodes" "SofaRN.placeHolderList[43]" 
 		""
 		5 4 "SofaRN" "Sofa:lambert1SG.groupNodes" "SofaRN.placeHolderList[44]" 
 		""
-		5 3 "SofaRN" "Sofa:lambert1SG.memberWireframeColor" "SofaRN.placeHolderList[45]" 
+		5 4 "SofaRN" "Sofa:lambert1SG.groupNodes" "SofaRN.placeHolderList[45]" 
 		""
-		5 3 "SofaRN" "Sofa:lambert1SG.memberWireframeColor" "SofaRN.placeHolderList[46]" 
+		5 4 "SofaRN" "Sofa:lambert1SG.groupNodes" "SofaRN.placeHolderList[46]" 
 		""
 		5 0 "SofaRN" "|SofaRNfosterParent1|Sofa:transform5|Sofa:Soda_topShape.instObjGroups.objectGroups[0]" 
 		"Sofa:standardSurface1SG.dagSetMembers" "SofaRN.placeHolderList[47]" "SofaRN.placeHolderList[48]" 
@@ -285648,17 +285726,17 @@ createNode reference -n "SofaRN";
 		""
 		5 4 "SofaRN" "Sofa:standardSurface1SG.dagSetMembers" "SofaRN.placeHolderList[52]" 
 		""
-		5 4 "SofaRN" "Sofa:standardSurface1SG.groupNodes" "SofaRN.placeHolderList[53]" 
+		5 3 "SofaRN" "Sofa:standardSurface1SG.memberWireframeColor" "SofaRN.placeHolderList[53]" 
 		""
-		5 4 "SofaRN" "Sofa:standardSurface1SG.groupNodes" "SofaRN.placeHolderList[54]" 
+		5 3 "SofaRN" "Sofa:standardSurface1SG.memberWireframeColor" "SofaRN.placeHolderList[54]" 
 		""
 		5 4 "SofaRN" "Sofa:standardSurface1SG.groupNodes" "SofaRN.placeHolderList[55]" 
 		""
 		5 4 "SofaRN" "Sofa:standardSurface1SG.groupNodes" "SofaRN.placeHolderList[56]" 
 		""
-		5 3 "SofaRN" "Sofa:standardSurface1SG.memberWireframeColor" "SofaRN.placeHolderList[57]" 
+		5 4 "SofaRN" "Sofa:standardSurface1SG.groupNodes" "SofaRN.placeHolderList[57]" 
 		""
-		5 3 "SofaRN" "Sofa:standardSurface1SG.memberWireframeColor" "SofaRN.placeHolderList[58]" 
+		5 4 "SofaRN" "Sofa:standardSurface1SG.groupNodes" "SofaRN.placeHolderList[58]" 
 		"";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
@@ -285742,6 +285820,500 @@ createNode groupParts -n "Sofa:groupParts6";
 createNode groupId -n "Sofa:groupId30";
 	rename -uid "ABB55610-489C-46DA-B006-398C42DBA537";
 	setAttr ".ihi" 0;
+createNode reference -n "OrganicPropRN";
+	rename -uid "801BDAFF-447D-DCA1-C573-E3B2A83CF7C0";
+	setAttr -s 86 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
+	setAttr ".phl[55]" 0;
+	setAttr ".phl[56]" 0;
+	setAttr ".phl[57]" 0;
+	setAttr ".phl[58]" 0;
+	setAttr ".phl[59]" 0;
+	setAttr ".phl[60]" 0;
+	setAttr ".phl[61]" 0;
+	setAttr ".phl[62]" 0;
+	setAttr ".phl[63]" 0;
+	setAttr ".phl[64]" 0;
+	setAttr ".phl[65]" 0;
+	setAttr ".phl[66]" 0;
+	setAttr ".phl[67]" 0;
+	setAttr ".phl[68]" 0;
+	setAttr ".phl[69]" 0;
+	setAttr ".phl[70]" 0;
+	setAttr ".phl[71]" 0;
+	setAttr ".phl[72]" 0;
+	setAttr ".phl[73]" 0;
+	setAttr ".phl[74]" 0;
+	setAttr ".phl[75]" 0;
+	setAttr ".phl[76]" 0;
+	setAttr ".phl[77]" 0;
+	setAttr ".phl[78]" 0;
+	setAttr ".phl[79]" 0;
+	setAttr ".phl[80]" 0;
+	setAttr ".phl[81]" 0;
+	setAttr ".phl[82]" 0;
+	setAttr ".phl[83]" 0;
+	setAttr ".phl[84]" 0;
+	setAttr ".phl[85]" 0;
+	setAttr ".phl[86]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"OrganicPropRN"
+		"OrganicPropRN" 0
+		"OrganicPropRN" 149
+		0 "|OrganicProp:pPlaneShape1" "|OrganicPropRNfosterParent1|OrganicProp:transform13" 
+		"-s -r "
+		0 "|OrganicProp:pCubeShape1" "|OrganicPropRNfosterParent1|OrganicProp:transform11" 
+		"-s -r "
+		0 "|OrganicProp:pasted__pCube4Shape" "|OrganicPropRNfosterParent1|OrganicProp:transform1" 
+		"-s -r "
+		0 "|OrganicProp:pasted__pPlaneShape1" "|OrganicPropRNfosterParent1|OrganicProp:transform7" 
+		"-s -r "
+		0 "|OrganicProp:pasted__pasted__pPlaneShape1" "|OrganicPropRNfosterParent1|OrganicProp:transform8" 
+		"-s -r "
+		0 "|OrganicProp:pasted__pPlaneShape1" "|OrganicPropRNfosterParent1|OrganicProp:transform12" 
+		"-s -r "
+		0 "|OrganicProp:pasted__pasted__pPlaneShape1" "|OrganicPropRNfosterParent1|OrganicProp:transform10" 
+		"-s -r "
+		0 "|OrganicProp:pPlaneShape2" "|OrganicPropRNfosterParent1|OrganicProp:transform6" 
+		"-s -r "
+		0 "|OrganicProp:pasted__pPlaneShape2" "|OrganicPropRNfosterParent1|OrganicProp:transform2" 
+		"-s -r "
+		0 "|OrganicProp:pasted__pasted__pPlaneShape2" "|OrganicPropRNfosterParent1|OrganicProp:transform3" 
+		"-s -r "
+		0 "|OrganicProp:pSphereShape1" "|OrganicPropRNfosterParent1|OrganicProp:transform5" 
+		"-s -r "
+		0 "|OrganicProp:pasted__pasted__pPlaneShape2" "|OrganicPropRNfosterParent1|OrganicProp:transform4" 
+		"-s -r "
+		0 "|OrganicProp:pasted__pasted__pasted__pPlaneShape2" "|OrganicPropRNfosterParent1|OrganicProp:transform9" 
+		"-s -r "
+		0 "|OrganicPropRNfosterParent1|OrganicProp:transform13" "|OrganicProp:pPlane1" 
+		"-s -r "
+		0 "|OrganicPropRNfosterParent1|OrganicProp:transform11" "|OrganicProp:pCube1" 
+		"-s -r "
+		0 "|OrganicPropRNfosterParent1|OrganicProp:transform1" "|OrganicProp:pasted__pCube4" 
+		"-s -r "
+		0 "|OrganicPropRNfosterParent1|OrganicProp:transform7" "|OrganicProp:group5|OrganicProp:pasted__pPlane1" 
+		"-s -r "
+		0 "|OrganicPropRNfosterParent1|OrganicProp:transform8" "|OrganicProp:group6|OrganicProp:pasted__group5|OrganicProp:pasted__pasted__pPlane1" 
+		"-s -r "
+		0 "|OrganicPropRNfosterParent1|OrganicProp:transform12" "|OrganicProp:group7|OrganicProp:pasted__pPlane1" 
+		"-s -r "
+		0 "|OrganicPropRNfosterParent1|OrganicProp:transform10" "|OrganicProp:group8|OrganicProp:pasted__group5|OrganicProp:pasted__pasted__pPlane1" 
+		"-s -r "
+		0 "|OrganicPropRNfosterParent1|OrganicProp:transform6" "|OrganicProp:pPlane2" 
+		"-s -r "
+		0 "|OrganicPropRNfosterParent1|OrganicProp:transform2" "|OrganicProp:group9|OrganicProp:pasted__pPlane2" 
+		"-s -r "
+		0 "|OrganicPropRNfosterParent1|OrganicProp:transform3" "|OrganicProp:group10|OrganicProp:pasted__group9|OrganicProp:pasted__pasted__pPlane2" 
+		"-s -r "
+		0 "|OrganicPropRNfosterParent1|OrganicProp:transform5" "|OrganicProp:pSphere1" 
+		"-s -r "
+		0 "|OrganicPropRNfosterParent1|OrganicProp:transform4" "|OrganicProp:group11|OrganicProp:pasted__group9|OrganicProp:pasted__pasted__pPlane2" 
+		"-s -r "
+		0 "|OrganicPropRNfosterParent1|OrganicProp:transform9" "|OrganicProp:group12|OrganicProp:pasted__group10|OrganicProp:pasted__pasted__group9|OrganicProp:pasted__pasted__pasted__pPlane2" 
+		"-s -r "
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform13|OrganicProp:pPlaneShape1" 
+		"intermediateObject" " 1"
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform13|OrganicProp:pPlaneShape1" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:3]\""
+		
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform11|OrganicProp:pCubeShape1" 
+		"intermediateObject" " 1"
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform11|OrganicProp:pCubeShape1" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:21]\""
+		
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform1|OrganicProp:pasted__pCube4Shape" 
+		"intermediateObject" " 1"
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform7|OrganicProp:pasted__pPlaneShape1" 
+		"intermediateObject" " 1"
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform7|OrganicProp:pasted__pPlaneShape1" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:3]\""
+		
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform8|OrganicProp:pasted__pasted__pPlaneShape1" 
+		"intermediateObject" " 1"
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform8|OrganicProp:pasted__pasted__pPlaneShape1" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:3]\""
+		
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform12|OrganicProp:pasted__pPlaneShape1" 
+		"intermediateObject" " 1"
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform12|OrganicProp:pasted__pPlaneShape1" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:3]\""
+		
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform10|OrganicProp:pasted__pasted__pPlaneShape1" 
+		"intermediateObject" " 1"
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform10|OrganicProp:pasted__pasted__pPlaneShape1" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:3]\""
+		
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform6|OrganicProp:pPlaneShape2" 
+		"intermediateObject" " 1"
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform6|OrganicProp:pPlaneShape2" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:24]\""
+		
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform2|OrganicProp:pasted__pPlaneShape2" 
+		"intermediateObject" " 1"
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform2|OrganicProp:pasted__pPlaneShape2" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:24]\""
+		
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform3|OrganicProp:pasted__pasted__pPlaneShape2" 
+		"intermediateObject" " 1"
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform3|OrganicProp:pasted__pasted__pPlaneShape2" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:24]\""
+		
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform5|OrganicProp:pSphereShape1" 
+		"intermediateObject" " 1"
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform5|OrganicProp:pSphereShape1" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:399]\""
+		
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform4|OrganicProp:pasted__pasted__pPlaneShape2" 
+		"intermediateObject" " 1"
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform4|OrganicProp:pasted__pasted__pPlaneShape2" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:24]\""
+		
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform9|OrganicProp:pasted__pasted__pasted__pPlaneShape2" 
+		"intermediateObject" " 1"
+		2 "|OrganicPropRNfosterParent1|OrganicProp:transform9|OrganicProp:pasted__pasted__pasted__pPlaneShape2" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:24]\""
+		
+		3 "|OrganicPropRNfosterParent1|OrganicProp:transform4|OrganicProp:pasted__pasted__pPlaneShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|OrganicPropRNfosterParent1|OrganicProp:transform12|OrganicProp:pasted__pPlaneShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|OrganicPropRNfosterParent1|OrganicProp:transform11|OrganicProp:pCubeShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|OrganicPropRNfosterParent1|OrganicProp:transform3|OrganicProp:pasted__pasted__pPlaneShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|OrganicPropRNfosterParent1|OrganicProp:transform8|OrganicProp:pasted__pasted__pPlaneShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|OrganicPropRNfosterParent1|OrganicProp:transform5|OrganicProp:pSphereShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|OrganicPropRNfosterParent1|OrganicProp:transform13|OrganicProp:pPlaneShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|OrganicPropRNfosterParent1|OrganicProp:transform9|OrganicProp:pasted__pasted__pasted__pPlaneShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|OrganicPropRNfosterParent1|OrganicProp:transform10|OrganicProp:pasted__pasted__pPlaneShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|OrganicPropRNfosterParent1|OrganicProp:transform7|OrganicProp:pasted__pPlaneShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|OrganicPropRNfosterParent1|OrganicProp:transform2|OrganicProp:pasted__pPlaneShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|OrganicPropRNfosterParent1|OrganicProp:transform6|OrganicProp:pPlaneShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform9|OrganicProp:pasted__pasted__pasted__pPlaneShape2.instObjGroups.objectGroups[0]" 
+		"OrganicPropRN.placeHolderList[1]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform9|OrganicProp:pasted__pasted__pasted__pPlaneShape2.instObjGroups.objectGroups[0].objectGroupId" 
+		"OrganicPropRN.placeHolderList[2]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform9|OrganicProp:pasted__pasted__pasted__pPlaneShape2.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OrganicPropRN.placeHolderList[3]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform9|OrganicProp:pasted__pasted__pasted__pPlaneShape2.outMesh" 
+		"OrganicPropRN.placeHolderList[4]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform9|OrganicProp:pasted__pasted__pasted__pPlaneShape2.worldMatrix" 
+		"OrganicPropRN.placeHolderList[5]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform9|OrganicProp:pasted__pasted__pasted__pPlaneShape2.compInstObjGroups.compObjectGroups[0]" 
+		"OrganicPropRN.placeHolderList[6]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform9|OrganicProp:pasted__pasted__pasted__pPlaneShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OrganicPropRN.placeHolderList[7]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform4|OrganicProp:pasted__pasted__pPlaneShape2.instObjGroups.objectGroups[0]" 
+		"OrganicPropRN.placeHolderList[8]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform4|OrganicProp:pasted__pasted__pPlaneShape2.instObjGroups.objectGroups[0].objectGroupId" 
+		"OrganicPropRN.placeHolderList[9]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform4|OrganicProp:pasted__pasted__pPlaneShape2.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OrganicPropRN.placeHolderList[10]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform4|OrganicProp:pasted__pasted__pPlaneShape2.outMesh" 
+		"OrganicPropRN.placeHolderList[11]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform4|OrganicProp:pasted__pasted__pPlaneShape2.worldMatrix" 
+		"OrganicPropRN.placeHolderList[12]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform4|OrganicProp:pasted__pasted__pPlaneShape2.compInstObjGroups.compObjectGroups[0]" 
+		"OrganicPropRN.placeHolderList[13]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform4|OrganicProp:pasted__pasted__pPlaneShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OrganicPropRN.placeHolderList[14]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform5|OrganicProp:pSphereShape1.instObjGroups.objectGroups[0]" 
+		"OrganicPropRN.placeHolderList[15]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform5|OrganicProp:pSphereShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		"OrganicPropRN.placeHolderList[16]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform5|OrganicProp:pSphereShape1.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OrganicPropRN.placeHolderList[17]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform5|OrganicProp:pSphereShape1.outMesh" 
+		"OrganicPropRN.placeHolderList[18]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform5|OrganicProp:pSphereShape1.worldMatrix" 
+		"OrganicPropRN.placeHolderList[19]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform5|OrganicProp:pSphereShape1.compInstObjGroups.compObjectGroups[0]" 
+		"OrganicPropRN.placeHolderList[20]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform5|OrganicProp:pSphereShape1.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OrganicPropRN.placeHolderList[21]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform3|OrganicProp:pasted__pasted__pPlaneShape2.instObjGroups.objectGroups[0]" 
+		"OrganicPropRN.placeHolderList[22]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform3|OrganicProp:pasted__pasted__pPlaneShape2.instObjGroups.objectGroups[0].objectGroupId" 
+		"OrganicPropRN.placeHolderList[23]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform3|OrganicProp:pasted__pasted__pPlaneShape2.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OrganicPropRN.placeHolderList[24]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform3|OrganicProp:pasted__pasted__pPlaneShape2.outMesh" 
+		"OrganicPropRN.placeHolderList[25]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform3|OrganicProp:pasted__pasted__pPlaneShape2.worldMatrix" 
+		"OrganicPropRN.placeHolderList[26]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform3|OrganicProp:pasted__pasted__pPlaneShape2.compInstObjGroups.compObjectGroups[0]" 
+		"OrganicPropRN.placeHolderList[27]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform3|OrganicProp:pasted__pasted__pPlaneShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OrganicPropRN.placeHolderList[28]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform2|OrganicProp:pasted__pPlaneShape2.instObjGroups.objectGroups[0]" 
+		"OrganicPropRN.placeHolderList[29]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform2|OrganicProp:pasted__pPlaneShape2.instObjGroups.objectGroups[0].objectGroupId" 
+		"OrganicPropRN.placeHolderList[30]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform2|OrganicProp:pasted__pPlaneShape2.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OrganicPropRN.placeHolderList[31]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform2|OrganicProp:pasted__pPlaneShape2.outMesh" 
+		"OrganicPropRN.placeHolderList[32]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform2|OrganicProp:pasted__pPlaneShape2.worldMatrix" 
+		"OrganicPropRN.placeHolderList[33]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform2|OrganicProp:pasted__pPlaneShape2.compInstObjGroups.compObjectGroups[0]" 
+		"OrganicPropRN.placeHolderList[34]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform2|OrganicProp:pasted__pPlaneShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OrganicPropRN.placeHolderList[35]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform6|OrganicProp:pPlaneShape2.instObjGroups.objectGroups[0]" 
+		"OrganicPropRN.placeHolderList[36]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform6|OrganicProp:pPlaneShape2.instObjGroups.objectGroups[0].objectGroupId" 
+		"OrganicPropRN.placeHolderList[37]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform6|OrganicProp:pPlaneShape2.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OrganicPropRN.placeHolderList[38]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform6|OrganicProp:pPlaneShape2.outMesh" 
+		"OrganicPropRN.placeHolderList[39]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform6|OrganicProp:pPlaneShape2.worldMatrix" 
+		"OrganicPropRN.placeHolderList[40]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform6|OrganicProp:pPlaneShape2.compInstObjGroups.compObjectGroups[0]" 
+		"OrganicPropRN.placeHolderList[41]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform6|OrganicProp:pPlaneShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OrganicPropRN.placeHolderList[42]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform10|OrganicProp:pasted__pasted__pPlaneShape1.instObjGroups.objectGroups[0]" 
+		"OrganicPropRN.placeHolderList[43]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform10|OrganicProp:pasted__pasted__pPlaneShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		"OrganicPropRN.placeHolderList[44]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform10|OrganicProp:pasted__pasted__pPlaneShape1.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OrganicPropRN.placeHolderList[45]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform10|OrganicProp:pasted__pasted__pPlaneShape1.outMesh" 
+		"OrganicPropRN.placeHolderList[46]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform10|OrganicProp:pasted__pasted__pPlaneShape1.worldMatrix" 
+		"OrganicPropRN.placeHolderList[47]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform10|OrganicProp:pasted__pasted__pPlaneShape1.compInstObjGroups.compObjectGroups[0]" 
+		"OrganicPropRN.placeHolderList[48]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform10|OrganicProp:pasted__pasted__pPlaneShape1.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OrganicPropRN.placeHolderList[49]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform12|OrganicProp:pasted__pPlaneShape1.instObjGroups.objectGroups[0]" 
+		"OrganicPropRN.placeHolderList[50]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform12|OrganicProp:pasted__pPlaneShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		"OrganicPropRN.placeHolderList[51]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform12|OrganicProp:pasted__pPlaneShape1.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OrganicPropRN.placeHolderList[52]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform12|OrganicProp:pasted__pPlaneShape1.outMesh" 
+		"OrganicPropRN.placeHolderList[53]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform12|OrganicProp:pasted__pPlaneShape1.worldMatrix" 
+		"OrganicPropRN.placeHolderList[54]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform12|OrganicProp:pasted__pPlaneShape1.compInstObjGroups.compObjectGroups[0]" 
+		"OrganicPropRN.placeHolderList[55]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform12|OrganicProp:pasted__pPlaneShape1.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OrganicPropRN.placeHolderList[56]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform8|OrganicProp:pasted__pasted__pPlaneShape1.instObjGroups.objectGroups[0]" 
+		"OrganicPropRN.placeHolderList[57]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform8|OrganicProp:pasted__pasted__pPlaneShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		"OrganicPropRN.placeHolderList[58]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform8|OrganicProp:pasted__pasted__pPlaneShape1.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OrganicPropRN.placeHolderList[59]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform8|OrganicProp:pasted__pasted__pPlaneShape1.outMesh" 
+		"OrganicPropRN.placeHolderList[60]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform8|OrganicProp:pasted__pasted__pPlaneShape1.worldMatrix" 
+		"OrganicPropRN.placeHolderList[61]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform8|OrganicProp:pasted__pasted__pPlaneShape1.compInstObjGroups.compObjectGroups[0]" 
+		"OrganicPropRN.placeHolderList[62]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform8|OrganicProp:pasted__pasted__pPlaneShape1.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OrganicPropRN.placeHolderList[63]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform7|OrganicProp:pasted__pPlaneShape1.instObjGroups.objectGroups[0]" 
+		"OrganicPropRN.placeHolderList[64]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform7|OrganicProp:pasted__pPlaneShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		"OrganicPropRN.placeHolderList[65]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform7|OrganicProp:pasted__pPlaneShape1.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OrganicPropRN.placeHolderList[66]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform7|OrganicProp:pasted__pPlaneShape1.outMesh" 
+		"OrganicPropRN.placeHolderList[67]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform7|OrganicProp:pasted__pPlaneShape1.worldMatrix" 
+		"OrganicPropRN.placeHolderList[68]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform7|OrganicProp:pasted__pPlaneShape1.compInstObjGroups.compObjectGroups[0]" 
+		"OrganicPropRN.placeHolderList[69]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform7|OrganicProp:pasted__pPlaneShape1.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OrganicPropRN.placeHolderList[70]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform1|OrganicProp:pasted__pCube4Shape.outMesh" 
+		"OrganicPropRN.placeHolderList[71]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform1|OrganicProp:pasted__pCube4Shape.worldMatrix" 
+		"OrganicPropRN.placeHolderList[72]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform11|OrganicProp:pCubeShape1.instObjGroups.objectGroups[0]" 
+		"OrganicPropRN.placeHolderList[73]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform11|OrganicProp:pCubeShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		"OrganicPropRN.placeHolderList[74]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform11|OrganicProp:pCubeShape1.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OrganicPropRN.placeHolderList[75]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform11|OrganicProp:pCubeShape1.outMesh" 
+		"OrganicPropRN.placeHolderList[76]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform11|OrganicProp:pCubeShape1.worldMatrix" 
+		"OrganicPropRN.placeHolderList[77]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform11|OrganicProp:pCubeShape1.compInstObjGroups.compObjectGroups[0]" 
+		"OrganicPropRN.placeHolderList[78]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform11|OrganicProp:pCubeShape1.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OrganicPropRN.placeHolderList[79]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform13|OrganicProp:pPlaneShape1.instObjGroups.objectGroups[0]" 
+		"OrganicPropRN.placeHolderList[80]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform13|OrganicProp:pPlaneShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		"OrganicPropRN.placeHolderList[81]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform13|OrganicProp:pPlaneShape1.instObjGroups.objectGroups[0].objectGrpColor" 
+		"OrganicPropRN.placeHolderList[82]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform13|OrganicProp:pPlaneShape1.outMesh" 
+		"OrganicPropRN.placeHolderList[83]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform13|OrganicProp:pPlaneShape1.worldMatrix" 
+		"OrganicPropRN.placeHolderList[84]" ""
+		5 3 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform13|OrganicProp:pPlaneShape1.compInstObjGroups.compObjectGroups[0]" 
+		"OrganicPropRN.placeHolderList[85]" ""
+		5 4 "OrganicPropRN" "|OrganicPropRNfosterParent1|OrganicProp:transform13|OrganicProp:pPlaneShape1.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"OrganicPropRN.placeHolderList[86]" "";
+lockNode -l 1 ;
+createNode polyUnite -n "polyUnite5";
+	rename -uid "F1D038EB-420D-8515-049C-098C12383751";
+	setAttr -s 13 ".ip";
+	setAttr -s 13 ".im";
+createNode groupId -n "OrganicProp:groupId16";
+	rename -uid "27DC4844-468D-9117-6129-56B122ADA29A";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId17";
+	rename -uid "6E5EC781-4FBC-C7DF-4095-059534997E00";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId18";
+	rename -uid "17A5CA2F-4D0A-763D-00E1-D6BDC1399E2B";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId19";
+	rename -uid "479B6BEB-49E4-64B0-88FB-488879ABA501";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId20";
+	rename -uid "9D011F95-44EE-98B7-9DE4-879DBC852A2C";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId21";
+	rename -uid "DD19E3A6-4E50-3AD1-C3DA-E0805F760A49";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId22";
+	rename -uid "13B918D0-4DF2-9B61-A29B-B98C26087B3C";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId23";
+	rename -uid "1595D30A-4CF2-82C3-9E52-5FB07C50C10A";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId24";
+	rename -uid "6E11F7E6-4AAC-0EF2-4B04-B494BFEA9A4B";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId25";
+	rename -uid "C5723727-4372-00A3-6F93-96B0492032D4";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId26";
+	rename -uid "C4887FAF-4963-CDAE-3710-109535845476";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId27";
+	rename -uid "26699B27-4913-C346-F553-4CA03C69FED0";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId28";
+	rename -uid "A0D8F9CE-4D54-AD28-D495-3BA59DB756A2";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId29";
+	rename -uid "97B0FB9B-4A3C-07DD-3492-618613113969";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId30";
+	rename -uid "6EAB3ACA-471B-29F2-DF3B-279B3233C321";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId31";
+	rename -uid "E7565102-4A5A-12EB-6F26-46A7BB19D5FB";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId32";
+	rename -uid "22DBB8BB-4D5D-8D33-5308-D7B0D5049456";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId33";
+	rename -uid "E94EB7F6-4CC4-153A-8980-65A190769293";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId34";
+	rename -uid "2082DD62-4BA9-A249-F84A-1DBF9EA78F3D";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId35";
+	rename -uid "AE1475D8-4539-A7F1-6EA7-5B98B2B78647";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId36";
+	rename -uid "C1B0045D-46D5-654E-4FC4-1FABF3417C6B";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId37";
+	rename -uid "FC9BF790-4A5D-D747-3A85-99A590CAC3B1";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId38";
+	rename -uid "7B3AACF5-4066-54AE-F35C-5E9EED5FFEC8";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId39";
+	rename -uid "304C4EAD-4CF8-CCF8-09D0-6B931A734372";
+	setAttr ".ihi" 0;
+createNode groupId -n "OrganicProp:groupId40";
+	rename -uid "7E3EF2CD-4389-EB13-FE10-BA9CACA5D539";
+	setAttr ".ihi" 0;
+createNode groupParts -n "OrganicProp:groupParts1";
+	rename -uid "99D66ABA-4AA7-543A-9578-0F9B3A4EAF44";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:650]";
+createNode groupId -n "OrganicProp:groupId41";
+	rename -uid "A52B28D3-4160-1EC7-FDD7-D1A67835F6AB";
+	setAttr ".ihi" 0;
+createNode curveWarp -n "curveWarp1";
+	rename -uid "0650FC81-4A07-E738-7E49-05A3C7D94552";
+	setAttr -s 4 ".scaleCurve[0:3]"  0 0.5 0.333 0.5 0.667 0.5 1 0.5;
+	setAttr -s 4 ".twistCurve[0:3]"  0 0.5 0.333 0.5 0.667 0.5 1 0.5;
 select -ne :time1;
 	setAttr ".o" 70;
 	setAttr ".unw" 70;
@@ -285760,7 +286332,7 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
-	setAttr -s 3 ".r";
+	setAttr -s 4 ".r";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -285768,9 +286340,9 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.64102566 0.64102566 0.64102566 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 104 ".dsm";
+	setAttr -s 132 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 36 ".gn";
+	setAttr -s 62 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
@@ -285791,6 +286363,8 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "Unit4_CurvesLabRN.phl[1]" "polyUnite1.ip[0]";
 connectAttr "Unit4_CurvesLabRN.phl[2]" ":initialShadingGroup.dsm" -na;
 connectAttr "Unit4_CurvesLab:groupId2.id" "Unit4_CurvesLabRN.phl[3]";
@@ -285829,8 +286403,6 @@ connectAttr "Unit4_CurvesLabRN.phl[35]" "polyUnite1.ip[4]";
 connectAttr "Unit4_CurvesLabRN.phl[36]" "polyUnite1.im[4]";
 connectAttr "Unit4_CurvesLabRN.phl[37]" ":initialShadingGroup.dsm" -na;
 connectAttr "Unit4_CurvesLab:groupId10.id" "Unit4_CurvesLabRN.phl[38]";
-connectAttr "SofaRN.phl[1]" "polyUnite3.ip[0]";
-connectAttr "SofaRN.phl[2]" "polyUnite3.im[0]";
 connectAttr "SofaRN.phl[3]" "polyUnite3.ip[4]";
 connectAttr "SofaRN.phl[4]" "polyUnite3.im[4]";
 connectAttr "SofaRN.phl[5]" "polyUnite3.ip[1]";
@@ -285866,25 +286438,111 @@ connectAttr "SofaRN.phl[37]" "SofaRN.phl[38]";
 connectAttr "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape.iog.og[2]" "SofaRN.phl[39]"
 		;
 connectAttr "Sofa:pillow4Shape.iog.og[2]" "SofaRN.phl[40]";
-connectAttr "Sofa:groupId19.msg" "SofaRN.phl[41]";
-connectAttr "Sofa:groupId20.msg" "SofaRN.phl[42]";
-connectAttr "Sofa:groupId23.msg" "SofaRN.phl[43]";
-connectAttr "Sofa:groupId29.msg" "SofaRN.phl[44]";
-connectAttr "SofaRN.phl[45]" "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape.iog.og[2].gco"
+connectAttr "SofaRN.phl[41]" "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape.iog.og[2].gco"
 		;
-connectAttr "SofaRN.phl[46]" "Sofa:pillow4Shape.iog.og[2].gco";
+connectAttr "SofaRN.phl[42]" "Sofa:pillow4Shape.iog.og[2].gco";
+connectAttr "Sofa:groupId19.msg" "SofaRN.phl[43]";
+connectAttr "Sofa:groupId20.msg" "SofaRN.phl[44]";
+connectAttr "Sofa:groupId23.msg" "SofaRN.phl[45]";
+connectAttr "Sofa:groupId29.msg" "SofaRN.phl[46]";
 connectAttr "SofaRN.phl[47]" "SofaRN.phl[48]";
 connectAttr "SofaRN.phl[49]" "SofaRN.phl[50]";
 connectAttr "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape.iog.og[1]" "SofaRN.phl[51]"
 		;
 connectAttr "Sofa:pillow4Shape.iog.og[1]" "SofaRN.phl[52]";
-connectAttr "Sofa:groupId15.msg" "SofaRN.phl[53]";
-connectAttr "Sofa:groupId16.msg" "SofaRN.phl[54]";
-connectAttr "Sofa:groupId22.msg" "SofaRN.phl[55]";
-connectAttr "Sofa:groupId28.msg" "SofaRN.phl[56]";
-connectAttr "SofaRN.phl[57]" "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape.iog.og[1].gco"
+connectAttr "SofaRN.phl[53]" "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape.iog.og[1].gco"
 		;
-connectAttr "SofaRN.phl[58]" "Sofa:pillow4Shape.iog.og[1].gco";
+connectAttr "SofaRN.phl[54]" "Sofa:pillow4Shape.iog.og[1].gco";
+connectAttr "Sofa:groupId15.msg" "SofaRN.phl[55]";
+connectAttr "Sofa:groupId16.msg" "SofaRN.phl[56]";
+connectAttr "Sofa:groupId22.msg" "SofaRN.phl[57]";
+connectAttr "Sofa:groupId28.msg" "SofaRN.phl[58]";
+connectAttr "OrganicPropRN.phl[1]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId24.id" "OrganicPropRN.phl[2]";
+connectAttr ":initialShadingGroup.mwc" "OrganicPropRN.phl[3]";
+connectAttr "OrganicPropRN.phl[4]" "polyUnite5.ip[4]";
+connectAttr "OrganicPropRN.phl[5]" "polyUnite5.im[4]";
+connectAttr "OrganicPropRN.phl[6]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId25.id" "OrganicPropRN.phl[7]";
+connectAttr "OrganicPropRN.phl[8]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId34.id" "OrganicPropRN.phl[9]";
+connectAttr ":initialShadingGroup.mwc" "OrganicPropRN.phl[10]";
+connectAttr "OrganicPropRN.phl[11]" "polyUnite5.ip[9]";
+connectAttr "OrganicPropRN.phl[12]" "polyUnite5.im[9]";
+connectAttr "OrganicPropRN.phl[13]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId35.id" "OrganicPropRN.phl[14]";
+connectAttr "OrganicPropRN.phl[15]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId32.id" "OrganicPropRN.phl[16]";
+connectAttr ":initialShadingGroup.mwc" "OrganicPropRN.phl[17]";
+connectAttr "OrganicPropRN.phl[18]" "polyUnite5.ip[8]";
+connectAttr "OrganicPropRN.phl[19]" "polyUnite5.im[8]";
+connectAttr "OrganicPropRN.phl[20]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId33.id" "OrganicPropRN.phl[21]";
+connectAttr "OrganicPropRN.phl[22]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId36.id" "OrganicPropRN.phl[23]";
+connectAttr ":initialShadingGroup.mwc" "OrganicPropRN.phl[24]";
+connectAttr "OrganicPropRN.phl[25]" "polyUnite5.ip[10]";
+connectAttr "OrganicPropRN.phl[26]" "polyUnite5.im[10]";
+connectAttr "OrganicPropRN.phl[27]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId37.id" "OrganicPropRN.phl[28]";
+connectAttr "OrganicPropRN.phl[29]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId38.id" "OrganicPropRN.phl[30]";
+connectAttr ":initialShadingGroup.mwc" "OrganicPropRN.phl[31]";
+connectAttr "OrganicPropRN.phl[32]" "polyUnite5.ip[11]";
+connectAttr "OrganicPropRN.phl[33]" "polyUnite5.im[11]";
+connectAttr "OrganicPropRN.phl[34]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId39.id" "OrganicPropRN.phl[35]";
+connectAttr "OrganicPropRN.phl[36]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId30.id" "OrganicPropRN.phl[37]";
+connectAttr ":initialShadingGroup.mwc" "OrganicPropRN.phl[38]";
+connectAttr "OrganicPropRN.phl[39]" "polyUnite5.ip[7]";
+connectAttr "OrganicPropRN.phl[40]" "polyUnite5.im[7]";
+connectAttr "OrganicPropRN.phl[41]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId31.id" "OrganicPropRN.phl[42]";
+connectAttr "OrganicPropRN.phl[43]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId22.id" "OrganicPropRN.phl[44]";
+connectAttr ":initialShadingGroup.mwc" "OrganicPropRN.phl[45]";
+connectAttr "OrganicPropRN.phl[46]" "polyUnite5.ip[3]";
+connectAttr "OrganicPropRN.phl[47]" "polyUnite5.im[3]";
+connectAttr "OrganicPropRN.phl[48]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId23.id" "OrganicPropRN.phl[49]";
+connectAttr "OrganicPropRN.phl[50]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId18.id" "OrganicPropRN.phl[51]";
+connectAttr ":initialShadingGroup.mwc" "OrganicPropRN.phl[52]";
+connectAttr "OrganicPropRN.phl[53]" "polyUnite5.ip[1]";
+connectAttr "OrganicPropRN.phl[54]" "polyUnite5.im[1]";
+connectAttr "OrganicPropRN.phl[55]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId19.id" "OrganicPropRN.phl[56]";
+connectAttr "OrganicPropRN.phl[57]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId26.id" "OrganicPropRN.phl[58]";
+connectAttr ":initialShadingGroup.mwc" "OrganicPropRN.phl[59]";
+connectAttr "OrganicPropRN.phl[60]" "polyUnite5.ip[5]";
+connectAttr "OrganicPropRN.phl[61]" "polyUnite5.im[5]";
+connectAttr "OrganicPropRN.phl[62]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId27.id" "OrganicPropRN.phl[63]";
+connectAttr "OrganicPropRN.phl[64]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId28.id" "OrganicPropRN.phl[65]";
+connectAttr ":initialShadingGroup.mwc" "OrganicPropRN.phl[66]";
+connectAttr "OrganicPropRN.phl[67]" "polyUnite5.ip[6]";
+connectAttr "OrganicPropRN.phl[68]" "polyUnite5.im[6]";
+connectAttr "OrganicPropRN.phl[69]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId29.id" "OrganicPropRN.phl[70]";
+connectAttr "OrganicPropRN.phl[71]" "polyUnite5.ip[12]";
+connectAttr "OrganicPropRN.phl[72]" "polyUnite5.im[12]";
+connectAttr "OrganicPropRN.phl[73]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId20.id" "OrganicPropRN.phl[74]";
+connectAttr ":initialShadingGroup.mwc" "OrganicPropRN.phl[75]";
+connectAttr "OrganicPropRN.phl[76]" "polyUnite5.ip[2]";
+connectAttr "OrganicPropRN.phl[77]" "polyUnite5.im[2]";
+connectAttr "OrganicPropRN.phl[78]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId21.id" "OrganicPropRN.phl[79]";
+connectAttr "OrganicPropRN.phl[80]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId16.id" "OrganicPropRN.phl[81]";
+connectAttr ":initialShadingGroup.mwc" "OrganicPropRN.phl[82]";
+connectAttr "OrganicPropRN.phl[83]" "polyUnite5.ip[0]";
+connectAttr "OrganicPropRN.phl[84]" "polyUnite5.im[0]";
+connectAttr "OrganicPropRN.phl[85]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:groupId17.id" "OrganicPropRN.phl[86]";
 connectAttr "FloorLYR.di" "FloorMesh.do";
 connectAttr "groupId13.id" "ChairMeshShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "ChairMeshShape.iog.og[0].gco";
@@ -285914,8 +286572,6 @@ connectAttr ":initialShadingGroup.mwc" "Unit4_CurvesLab:pSphere1Shape.iog.og[0].
 		;
 connectAttr "Unit4_CurvesLab:groupId16.id" "Unit4_CurvesLab:pSphere1Shape.ciog.cog[0].cgid"
 		;
-connectAttr "Sofa:groupParts3.og" "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape.i"
-		;
 connectAttr "Sofa:groupId21.id" "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape.iog.og[0].gid"
 		;
 connectAttr ":initialShadingGroup.mwc" "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape.iog.og[0].gco"
@@ -285924,14 +286580,22 @@ connectAttr "Sofa:groupId22.id" "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape
 		;
 connectAttr "Sofa:groupId23.id" "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape.iog.og[2].gid"
 		;
+connectAttr "Sofa:groupParts3.og" "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape.i"
+		;
 connectAttr "Sofa:groupId24.id" "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape.ciog.cog[0].cgid"
 		;
-connectAttr "Sofa:groupParts6.og" "Sofa:pillow4Shape.i";
 connectAttr "Sofa:groupId27.id" "Sofa:pillow4Shape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "Sofa:pillow4Shape.iog.og[0].gco";
 connectAttr "Sofa:groupId28.id" "Sofa:pillow4Shape.iog.og[1].gid";
 connectAttr "Sofa:groupId29.id" "Sofa:pillow4Shape.iog.og[2].gid";
+connectAttr "Sofa:groupParts6.og" "Sofa:pillow4Shape.i";
 connectAttr "Sofa:groupId30.id" "Sofa:pillow4Shape.ciog.cog[0].cgid";
+connectAttr "curveWarp1.og[0]" "OrganicProp:pPlane1Shape.i";
+connectAttr "OrganicProp:groupId40.id" "OrganicProp:pPlane1Shape.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "OrganicProp:pPlane1Shape.iog.og[0].gco";
+connectAttr "OrganicProp:groupId41.id" "OrganicProp:pPlane1Shape.ciog.cog[0].cgid"
+		;
+connectAttr "OrganicProp:groupParts1.og" "pPlane1ShapeOrig.i";
 connectAttr "Unit4_CurvesLab:groupId1.id" "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform5|Unit4_CurvesLab:dirtShape.iog.og[0].gid"
 		;
 connectAttr ":initialShadingGroup.mwc" "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform5|Unit4_CurvesLab:dirtShape.iog.og[0].gco"
@@ -285961,6 +286625,8 @@ connectAttr "Unit4_CurvesLab:dirtShapeShape.wm" "polyUnite2.im[1]";
 connectAttr "polyUnite2.out" "Unit4_CurvesLab:groupParts2.ig";
 connectAttr "Unit4_CurvesLab:groupId15.id" "Unit4_CurvesLab:groupParts2.gi";
 connectAttr "SofaRNfosterParent1.msg" "SofaRN.fp";
+connectAttr "SofaRN.phl[1]" "polyUnite3.ip[0]";
+connectAttr "SofaRN.phl[2]" "polyUnite3.im[0]";
 connectAttr "polyUnite3.out" "Sofa:groupParts1.ig";
 connectAttr "Sofa:groupId21.id" "Sofa:groupParts1.gi";
 connectAttr "Sofa:groupParts1.og" "Sofa:groupParts2.ig";
@@ -285977,6 +286643,11 @@ connectAttr "Sofa:groupParts4.og" "Sofa:groupParts5.ig";
 connectAttr "Sofa:groupId28.id" "Sofa:groupParts5.gi";
 connectAttr "Sofa:groupParts5.og" "Sofa:groupParts6.ig";
 connectAttr "Sofa:groupId29.id" "Sofa:groupParts6.gi";
+connectAttr "OrganicPropRNfosterParent1.msg" "OrganicPropRN.fp";
+connectAttr "polyUnite5.out" "OrganicProp:groupParts1.ig";
+connectAttr "OrganicProp:groupId40.id" "OrganicProp:groupParts1.gi";
+connectAttr "pPlane1ShapeOrig.w" "curveWarp1.ip[0].ig";
+connectAttr "pPlane1ShapeOrig.o" "curveWarp1.orggeom[0]";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "|Unit4_CurvesLabRNfosterParent1|Unit4_CurvesLab:transform5|Unit4_CurvesLab:dirtShape.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
@@ -286065,6 +286736,9 @@ connectAttr "|Sofa:pillow4|Sofa:transform9|Sofa:pillow2Shape.ciog.cog[0]" ":init
 		 -na;
 connectAttr "Sofa:pillow4Shape.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "Sofa:pillow4Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:pPlane1Shape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "OrganicProp:pPlane1Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
 connectAttr "groupId11.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId12.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId13.msg" ":initialShadingGroup.gn" -na;
@@ -286094,4 +286768,29 @@ connectAttr "Sofa:groupId21.msg" ":initialShadingGroup.gn" -na;
 connectAttr "Sofa:groupId25.msg" ":initialShadingGroup.gn" -na;
 connectAttr "Sofa:groupId26.msg" ":initialShadingGroup.gn" -na;
 connectAttr "Sofa:groupId27.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId16.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId17.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId18.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId19.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId20.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId21.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId22.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId23.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId24.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId25.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId26.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId27.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId28.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId29.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId30.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId31.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId32.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId33.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId34.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId35.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId36.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId37.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId38.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId39.msg" ":initialShadingGroup.gn" -na;
+connectAttr "OrganicProp:groupId40.msg" ":initialShadingGroup.gn" -na;
 // End of Lab1 Room.ma
