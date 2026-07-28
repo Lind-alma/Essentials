@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: OrganicProp.ma
-//Last modified: Tue, Jul 28, 2026 12:17:43 PM
+//Last modified: Tue, Jul 28, 2026 02:53:27 PM
 //Codeset: 1252
 requires maya "2027";
 requires "mtoa" "5.6.0";
@@ -10,7 +10,7 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202603302215-e16e754b0e";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "D6A83F69-4CA7-9737-A0D1-6BBF89F6CCEC";
+fileInfo "UUID" "79B39C2A-4D22-EDF6-5156-878C1864BC51";
 createNode transform -s -n "persp";
 	rename -uid "E2016CDD-403A-72BB-F28B-0DB221461B76";
 	setAttr ".v" no;
@@ -81,77 +81,29 @@ createNode transform -n "group";
 	setAttr ".sp" -type "double3" -1.1920928955078125e-07 0.49222673001703154 -1.7881393432617188e-07 ;
 createNode transform -n "persp1";
 	rename -uid "78A32D00-4B6B-0B5A-8385-1ABC06956FC4";
-	setAttr ".t" -type "double3" 3.575611989478757 4.742143179535657 -2.8456018011501238 ;
-	setAttr ".r" -type "double3" -41.73835287747346 1563.3999999999269 0 ;
+	setAttr ".t" -type "double3" 4.8542756438872736 5.772367866829665 -2.0311949549427752 ;
+	setAttr ".r" -type "double3" -41.738352877437222 1549.3999999998966 0 ;
 createNode camera -n "persp1Shape" -p "persp1";
 	rename -uid "50A14DCE-4AB6-4747-FBEB-7FAB8FD60C2E";
 	setAttr -k off ".v";
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 6.0384078351873711;
+	setAttr ".coi" 7.2454430034190462;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
 	setAttr ".hc" -type "string" "viewSet -p %camera";
-createNode transform -n "pPlane1";
-	rename -uid "57015FA6-4919-1846-B60F-74BD887283E1";
-	setAttr ".t" -type "double3" 0.065614081744251096 1.8721979450815076 -0.30667874197420081 ;
-	setAttr ".r" -type "double3" 11.113818550753059 -43.676091192688808 -88.674599937915886 ;
-	setAttr ".s" -type "double3" 0.53586510129837128 0.53586510129837128 0.53586510129837128 ;
-createNode mesh -n "pPlaneShape1" -p "pPlane1";
-	rename -uid "B34D1394-461F-2EF3-CD64-05B7F486C6F6";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr -s 5 ".gtag";
-	setAttr ".gtag[0].gtagnm" -type "string" "back";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "e[10:11]";
-	setAttr ".gtag[1].gtagnm" -type "string" "front";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 2 "e[0]" "e[2]";
-	setAttr ".gtag[2].gtagnm" -type "string" "left";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 2 "e[1]" "e[6]";
-	setAttr ".gtag[3].gtagnm" -type "string" "right";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 2 "e[4]" "e[9]";
-	setAttr ".gtag[4].gtagnm" -type "string" "rim";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 4 "e[0:2]" "e[4]" "e[6]" "e[9:11]";
-	setAttr ".pv" -type "double2" 0.75 0.5 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 9 ".uvst[0].uvsp[0:8]" -type "float2" 0 0 0.5 0 1 0 0 0.5
-		 0.5 0.5 1 0.5 0 1 0.5 1 1 1;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 6 ".pt";
-	setAttr ".pt[0]" -type "float3" 0.16657251 0 -0.16657251 ;
-	setAttr ".pt[2]" -type "float3" 0.19318731 0 -0.24522966 ;
-	setAttr ".pt[4]" -type "float3" -2.9802322e-08 -0.12131348 0 ;
-	setAttr ".pt[5]" -type "float3" 0.32046443 -0.12131345 0 ;
-	setAttr ".pt[6]" -type "float3" 0.16657251 0 0.16657251 ;
-	setAttr ".pt[8]" -type "float3" 0.19318731 0 0.24522966 ;
-	setAttr -s 9 ".vt[0:8]"  -0.5 0 0.5 0 0 0.5 0.5 0 0.5 -0.5 0 0 0 0 0
-		 0.5 0 0 -0.5 0 -0.5 0 0 -0.5 0.5 0 -0.5;
-	setAttr -s 12 ".ed[0:11]"  0 1 0 0 3 0 1 2 0 1 4 1 2 5 0 3 4 1 3 6 0
-		 4 5 1 4 7 1 5 8 0 6 7 0 7 8 0;
-	setAttr -s 4 -ch 16 ".fc[0:3]" -type "polyFaces" 
-		f 4 0 3 -6 -2
-		mu 0 4 0 1 4 3
-		f 4 2 4 -8 -4
-		mu 0 4 1 2 5 4
-		f 4 5 8 -11 -7
-		mu 0 4 3 4 7 6
-		f 4 7 9 -12 -9
-		mu 0 4 4 5 8 7;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pCube1";
 	rename -uid "9A203EBC-45F5-5DB3-C08F-208C8AEA95AA";
 	setAttr ".t" -type "double3" 0 0.96420785128154685 0 ;
 	setAttr ".s" -type "double3" 1.5300722874744264 1.5300722874744264 1.5300722874744264 ;
-createNode mesh -n "pCubeShape1" -p "pCube1";
+createNode transform -n "transform8" -p "pCube1";
+	rename -uid "8AAD8AD3-491E-BC6D-C64D-FFB720EB4EE3";
+	setAttr ".v" no;
+createNode mesh -n "pCubeShape1" -p "transform8";
 	rename -uid "1475C8B8-429A-7F63-13D6-24B323BA25C8";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:21]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 6 ".gtag";
@@ -180,15 +132,10 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 12 ".pt";
-	setAttr ".pt[16]" -type "float3" 0.015544862 -0.27599841 -0.015544866 ;
-	setAttr ".pt[17]" -type "float3" -0.015544862 -0.27599841 -0.015544866 ;
-	setAttr ".pt[18]" -type "float3" -0.015789039 -0.28480417 -0.015789038 ;
-	setAttr ".pt[19]" -type "float3" 0.015789039 -0.28480417 -0.015789038 ;
-	setAttr ".pt[20]" -type "float3" -0.015789039 -0.28480417 0.015789038 ;
-	setAttr ".pt[21]" -type "float3" 0.015789039 -0.28480417 0.015789038 ;
-	setAttr ".pt[22]" -type "float3" -0.015544862 -0.27599841 0.015544866 ;
-	setAttr ".pt[23]" -type "float3" 0.015544862 -0.27599841 0.015544866 ;
+	setAttr -s 8 ".pt[16:23]" -type "float3"  0.015544862 -0.27599841 -0.015544866 
+		-0.015544862 -0.27599841 -0.015544866 -0.015789039 -0.28480417 -0.015789038 0.015789039 
+		-0.28480417 -0.015789038 -0.015789039 -0.28480417 0.015789038 0.015789039 -0.28480417 
+		0.015789038 -0.015544862 -0.27599841 0.015544866 0.015544862 -0.27599841 0.015544866;
 	setAttr -s 24 ".vt[0:23]"  -0.50000006 -0.5 0.50000006 0.50000006 -0.5 0.50000006
 		 -0.50000006 -0.25 0.50000006 0.50000006 -0.25 0.50000006 -0.50000006 0 0.50000006
 		 0.50000006 0 0.50000006 -0.50000006 0.25000006 0.50000006 0.50000006 0.25000006 0.50000006
@@ -252,6 +199,64 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "pPlane1";
+	rename -uid "57015FA6-4919-1846-B60F-74BD887283E1";
+	setAttr ".t" -type "double3" 0.065614081744251096 1.8721979450815076 -0.30667874197420081 ;
+	setAttr ".r" -type "double3" 11.113818550753059 -43.676091192688808 -88.674599937915886 ;
+	setAttr ".s" -type "double3" 0.53586510129837128 0.53586510129837128 0.53586510129837128 ;
+createNode transform -n "transform1" -p "pPlane1";
+	rename -uid "D5F18D87-4DCC-9D0D-B39E-769655F24806";
+	setAttr ".v" no;
+createNode mesh -n "pPlaneShape1" -p "transform1";
+	rename -uid "B34D1394-461F-2EF3-CD64-05B7F486C6F6";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:3]";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr -s 5 ".gtag";
+	setAttr ".gtag[0].gtagnm" -type "string" "back";
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "e[10:11]";
+	setAttr ".gtag[1].gtagnm" -type "string" "front";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 2 "e[0]" "e[2]";
+	setAttr ".gtag[2].gtagnm" -type "string" "left";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 2 "e[1]" "e[6]";
+	setAttr ".gtag[3].gtagnm" -type "string" "right";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 2 "e[4]" "e[9]";
+	setAttr ".gtag[4].gtagnm" -type "string" "rim";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 4 "e[0:2]" "e[4]" "e[6]" "e[9:11]";
+	setAttr ".pv" -type "double2" 0.75 0.5 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 9 ".uvst[0].uvsp[0:8]" -type "float2" 0 0 0.5 0 1 0 0 0.5
+		 0.5 0.5 1 0.5 0 1 0.5 1 1 1;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 6 ".pt";
+	setAttr ".pt[0]" -type "float3" 0.16657251 0 -0.16657251 ;
+	setAttr ".pt[2]" -type "float3" 0.19318731 0 -0.24522966 ;
+	setAttr ".pt[4]" -type "float3" -2.9802322e-08 -0.12131348 0 ;
+	setAttr ".pt[5]" -type "float3" 0.32046443 -0.12131345 0 ;
+	setAttr ".pt[6]" -type "float3" 0.16657251 0 0.16657251 ;
+	setAttr ".pt[8]" -type "float3" 0.19318731 0 0.24522966 ;
+	setAttr -s 9 ".vt[0:8]"  -0.5 0 0.5 0 0 0.5 0.5 0 0.5 -0.5 0 0 0 0 0
+		 0.5 0 0 -0.5 0 -0.5 0 0 -0.5 0.5 0 -0.5;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 0 3 0 1 2 0 1 4 1 2 5 0 3 4 1 3 6 0
+		 4 5 1 4 7 1 5 8 0 6 7 0 7 8 0;
+	setAttr -s 4 -ch 16 ".fc[0:3]" -type "polyFaces" 
+		f 4 0 3 -6 -2
+		mu 0 4 0 1 4 3
+		f 4 2 4 -8 -4
+		mu 0 4 1 2 5 4
+		f 4 5 8 -11 -7
+		mu 0 4 3 4 7 6
+		f 4 7 9 -12 -9
+		mu 0 4 4 5 8 7;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "group1";
 	rename -uid "1A077440-490F-C026-E7FB-1E9DB60E3C0E";
 	setAttr ".rp" -type "double3" -1.1920928955078125e-07 0.49222673001703154 -1.7881393432617188e-07 ;
@@ -260,9 +265,13 @@ createNode transform -n "pasted__pCube4";
 	rename -uid "B51C03BD-4B2F-39E8-9219-BE92410C5D21";
 	setAttr ".rp" -type "double3" -0.0057950767631915756 0.8713131860975345 -0.01062315116528556 ;
 	setAttr ".sp" -type "double3" -0.0057950767631915756 0.8713131860975345 -0.01062315116528556 ;
-createNode mesh -n "pasted__pCube4Shape" -p "pasted__pCube4";
+createNode transform -n "transform9" -p "pasted__pCube4";
+	rename -uid "639EA34B-4FA5-7F2E-CFED-52BA95CDA46A";
+	setAttr ".v" no;
+createNode mesh -n "pasted__pCube4Shape" -p "transform9";
 	rename -uid "B541FDC5-47F7-2A3C-B51C-B8AACB464A9B";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:83]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
@@ -532,7 +541,7 @@ createNode mesh -n "pasted__pCube4Shape" -p "pasted__pCube4";
 createNode transform -n "group5";
 	rename -uid "B67EB4F4-4532-6152-1EA8-BEAA12C5747C";
 	setAttr ".t" -type "double3" -0.27770570864069644 0.050897799597338977 0.68724578575252337 ;
-	setAttr ".r" -type "double3" 81.930862883401616 3.3083418006368066 22.149220447492343 ;
+	setAttr ".r" -type "double3" 81.930862883401616 3.3083418006368071 22.149220447492343 ;
 	setAttr ".rp" -type "double3" -0.034939567141916539 2.3258734700560204 -1.9646853293781383 ;
 	setAttr ".rpt" -type "double3" 0 -2.9087843245179101e-14 1.5987211554602254e-14 ;
 	setAttr ".sp" -type "double3" -0.034939567141916539 2.3258734700560204 -1.9646853293781383 ;
@@ -541,9 +550,14 @@ createNode transform -n "pasted__pPlane1" -p "group5";
 	setAttr ".t" -type "double3" -0.13712639026920603 3.8321678851267507 -1.1643020107919384 ;
 	setAttr ".r" -type "double3" 16.400836089687406 -46.802563921476612 -95.36513020289965 ;
 	setAttr ".s" -type "double3" 0.54167418635327835 0.54167418635327835 0.54167418635327835 ;
-createNode mesh -n "pasted__pPlaneShape1" -p "|group5|pasted__pPlane1";
+createNode transform -n "transform2" -p "|group5|pasted__pPlane1";
+	rename -uid "ACDD4843-473A-55F3-D0C4-5EBD060513A7";
+	setAttr ".v" no;
+createNode mesh -n "pasted__pPlaneShape1" -p "transform2";
 	rename -uid "1B793BE2-4843-13D7-0FC4-CF9D17A2A6E3";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:3]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 5 ".gtag";
@@ -608,9 +622,14 @@ createNode transform -n "pasted__pasted__pPlane1" -p "|group6|pasted__group5";
 	setAttr ".t" -type "double3" -0.50884526186129908 3.0608178231888132 -0.43829185724301523 ;
 	setAttr ".r" -type "double3" 14.143852082038753 -53.309260936087696 -92.65114032242009 ;
 	setAttr ".s" -type "double3" 0.55111139974379098 0.55111139974379098 0.55111139974379098 ;
-createNode mesh -n "pasted__pasted__pPlaneShape1" -p "|group6|pasted__group5|pasted__pasted__pPlane1";
+createNode transform -n "transform10" -p "|group6|pasted__group5|pasted__pasted__pPlane1";
+	rename -uid "EDF5A5FC-4F46-163D-0D9C-9F8C24A7C25F";
+	setAttr ".v" no;
+createNode mesh -n "pasted__pasted__pPlaneShape1" -p "transform10";
 	rename -uid "5633F821-454F-6661-8F8F-2DBEB5FEB1BE";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:3]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 5 ".gtag";
@@ -669,9 +688,14 @@ createNode transform -n "pasted__pPlane1" -p "group7";
 	setAttr ".t" -type "double3" -0.030115001975684563 4.1278651653860807 -1.5189884691819462 ;
 	setAttr ".r" -type "double3" 21.442811697655127 -51.503410174796379 -101.85433881084059 ;
 	setAttr ".s" -type "double3" 0.58537230238572791 0.58537230238572791 0.58537230238572791 ;
-createNode mesh -n "pasted__pPlaneShape1" -p "|group7|pasted__pPlane1";
+createNode transform -n "transform4" -p "|group7|pasted__pPlane1";
+	rename -uid "3F6AF020-47DC-D7AD-95B1-FFA0B3CDA29A";
+	setAttr ".v" no;
+createNode mesh -n "pasted__pPlaneShape1" -p "transform4";
 	rename -uid "F7F865A9-45FA-9AB9-CC62-3BA065654431";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:3]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 5 ".gtag";
@@ -736,9 +760,14 @@ createNode transform -n "pasted__pasted__pPlane1" -p "|group8|pasted__group5";
 	setAttr ".t" -type "double3" -0.13712639026920603 3.8321678851267507 -1.1643020107919384 ;
 	setAttr ".r" -type "double3" 16.400836089687406 -46.802563921476612 -95.36513020289965 ;
 	setAttr ".s" -type "double3" 0.54167418635327835 0.54167418635327835 0.54167418635327835 ;
-createNode mesh -n "pasted__pasted__pPlaneShape1" -p "|group8|pasted__group5|pasted__pasted__pPlane1";
+createNode transform -n "transform11" -p "|group8|pasted__group5|pasted__pasted__pPlane1";
+	rename -uid "283288E4-4D3B-ECA5-93C9-C6A68787B73D";
+	setAttr ".v" no;
+createNode mesh -n "pasted__pasted__pPlaneShape1" -p "transform11";
 	rename -uid "6F91950F-4228-B2A8-A37A-088DEC85965D";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:3]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 5 ".gtag";
@@ -784,14 +813,26 @@ createNode mesh -n "pasted__pasted__pPlaneShape1" -p "|group8|pasted__group5|pas
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pPlane2";
-	rename -uid "254F495E-4296-C9C2-15CF-118795C6A27A";
-	setAttr ".t" -type "double3" 0.2198559626266598 1.550926663437346 -0.5014698570444619 ;
-	setAttr ".r" -type "double3" 0.51320679311266915 -10.993674691277045 -13.446652919579121 ;
+createNode transform -n "group9";
+	rename -uid "3C18B0CD-488C-9380-4265-0EB2A004B243";
+	setAttr ".t" -type "double3" 0.25396528616082681 0.037135999203226522 0.79439058199258361 ;
+	setAttr ".r" -type "double3" 56.217332728527957 -130.37089718610508 -62.992420788962647 ;
+	setAttr ".rp" -type "double3" 0.21259557353340064 1.5050115482055586 -0.49941909742220775 ;
+	setAttr ".rpt" -type "double3" -1.6653345369377348e-15 4.9960036108132044e-16 2.6922908347160046e-15 ;
+	setAttr ".sp" -type "double3" 0.21259557353340064 1.5050115482055586 -0.49941909742220775 ;
+createNode transform -n "pasted__pPlane2" -p "group9";
+	rename -uid "6A438FB9-41EB-76B0-33AC-C0B6A9078A13";
+	setAttr ".t" -type "double3" 0.2198559626266598 1.5233361203437967 -0.5014698570444619 ;
+	setAttr ".r" -type "double3" 1.8458435478255468 -10.851484900028225 -20.471189227314511 ;
 	setAttr ".s" -type "double3" 0.52131449696087406 0.52131449696087406 0.52131449696087406 ;
-createNode mesh -n "pPlaneShape2" -p "pPlane2";
-	rename -uid "C3F83776-4332-2E4F-D1B8-64AE3A4AE7C1";
+createNode transform -n "transform5" -p "pasted__pPlane2";
+	rename -uid "C457641F-462E-19E9-EAC5-E19465EC8C74";
+	setAttr ".v" no;
+createNode mesh -n "pasted__pPlaneShape2" -p "transform5";
+	rename -uid "A1EDC6E7-4ADD-765D-3B9C-DE9CB0DF3AC1";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:24]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 5 ".gtag";
@@ -904,21 +945,19 @@ createNode mesh -n "pPlaneShape2" -p "pPlane2";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "group9";
-	rename -uid "3C18B0CD-488C-9380-4265-0EB2A004B243";
-	setAttr ".t" -type "double3" 0.25396528616082681 0.037135999203226522 0.79439058199258361 ;
-	setAttr ".r" -type "double3" 56.217332728527957 -130.37089718610508 -62.992420788962647 ;
-	setAttr ".rp" -type "double3" 0.21259557353340064 1.5050115482055586 -0.49941909742220775 ;
-	setAttr ".rpt" -type "double3" -1.6653345369377348e-15 4.9960036108132044e-16 2.6922908347160046e-15 ;
-	setAttr ".sp" -type "double3" 0.21259557353340064 1.5050115482055586 -0.49941909742220775 ;
-createNode transform -n "pasted__pPlane2" -p "group9";
-	rename -uid "6A438FB9-41EB-76B0-33AC-C0B6A9078A13";
-	setAttr ".t" -type "double3" 0.2198559626266598 1.5233361203437967 -0.5014698570444619 ;
-	setAttr ".r" -type "double3" 1.8458435478255468 -10.851484900028225 -20.471189227314511 ;
+createNode transform -n "pPlane2";
+	rename -uid "254F495E-4296-C9C2-15CF-118795C6A27A";
+	setAttr ".t" -type "double3" 0.2198559626266598 1.550926663437346 -0.5014698570444619 ;
+	setAttr ".r" -type "double3" 0.51320679311266915 -10.993674691277045 -13.446652919579122 ;
 	setAttr ".s" -type "double3" 0.52131449696087406 0.52131449696087406 0.52131449696087406 ;
-createNode mesh -n "pasted__pPlaneShape2" -p "pasted__pPlane2";
-	rename -uid "A1EDC6E7-4ADD-765D-3B9C-DE9CB0DF3AC1";
+createNode transform -n "transform3" -p "pPlane2";
+	rename -uid "C624708A-49DC-BCC5-7D94-B1AAF7D46FC3";
+	setAttr ".v" no;
+createNode mesh -n "pPlaneShape2" -p "transform3";
+	rename -uid "C3F83776-4332-2E4F-D1B8-64AE3A4AE7C1";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:24]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 5 ".gtag";
@@ -1049,9 +1088,14 @@ createNode transform -n "pasted__pasted__pPlane2" -p "|group10|pasted__group9";
 	setAttr ".t" -type "double3" -0.62508054799036872 1.2631835930280737 -0.45107208653157149 ;
 	setAttr ".r" -type "double3" 1.8458435478255468 -10.851484900028225 -20.471189227314511 ;
 	setAttr ".s" -type "double3" 0.44237171056263047 0.44237171056263047 0.44237171056263047 ;
-createNode mesh -n "pasted__pasted__pPlaneShape2" -p "|group10|pasted__group9|pasted__pasted__pPlane2";
+createNode transform -n "transform6" -p "|group10|pasted__group9|pasted__pasted__pPlane2";
+	rename -uid "E5E0D25B-43B5-A4AD-AB81-798124154234";
+	setAttr ".v" no;
+createNode mesh -n "pasted__pasted__pPlaneShape2" -p "transform6";
 	rename -uid "DFADE2D0-4A98-659A-4BE9-49884E1D76EA";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:24]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 5 ".gtag";
@@ -1163,13 +1207,157 @@ createNode mesh -n "pasted__pasted__pPlaneShape2" -p "|group10|pasted__group9|pa
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "group11";
+	rename -uid "A7D425FB-463A-DC1D-F70D-A184DDA5296D";
+	setAttr ".t" -type "double3" -0.90111078360924846 0 0 ;
+	setAttr ".r" -type "double3" -53.760480073637808 -183.39818863854131 32.183726464092729 ;
+	setAttr ".rp" -type "double3" 0.46656085969422573 1.5421475474087856 0.29497148457037858 ;
+	setAttr ".rpt" -type "double3" -1.1324274851176597e-13 -2.2537527399890678e-14 1.1124434706744069e-13 ;
+	setAttr ".sp" -type "double3" 0.46656085969422573 1.5421475474087856 0.29497148457037858 ;
+createNode transform -n "pasted__group9" -p "group11";
+	rename -uid "AC66191D-482A-5D84-0A6C-51B9316A7379";
+	setAttr ".t" -type "double3" 0.25396528616082681 0.037135999203226522 0.79439058199258361 ;
+	setAttr ".r" -type "double3" 56.217332728527957 -130.37089718610508 -62.992420788962647 ;
+	setAttr ".rp" -type "double3" 0.21259557353340064 1.5050115482055586 -0.49941909742220775 ;
+	setAttr ".rpt" -type "double3" -1.6653345369377348e-15 4.9960036108132044e-16 2.6922908347160046e-15 ;
+	setAttr ".sp" -type "double3" 0.21259557353340064 1.5050115482055586 -0.49941909742220775 ;
+createNode transform -n "pasted__pasted__pPlane2" -p "|group11|pasted__group9";
+	rename -uid "BBC8CBE7-4AEA-7BBE-917D-458EED179777";
+	setAttr ".t" -type "double3" 0.19908872297477145 0.90765023711429182 -0.67272616443650468 ;
+	setAttr ".r" -type "double3" -19.192200566474479 -10.851484900028206 -20.471189227314522 ;
+	setAttr ".s" -type "double3" 0.52131449696087406 0.52131449696087406 0.52131449696087406 ;
+createNode transform -n "transform13" -p "|group11|pasted__group9|pasted__pasted__pPlane2";
+	rename -uid "1B4249DA-4CF9-E73B-3A5A-E49D516F7499";
+	setAttr ".v" no;
+createNode mesh -n "pasted__pasted__pPlaneShape2" -p "transform13";
+	rename -uid "9DD7A39B-46F8-6FE6-5D74-39B1F5EC55A4";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:24]";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr -s 5 ".gtag";
+	setAttr ".gtag[0].gtagnm" -type "string" "back";
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "e[55:59]";
+	setAttr ".gtag[1].gtagnm" -type "string" "front";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 5 "e[0]" "e[2]" "e[4]" "e[6]" "e[8]";
+	setAttr ".gtag[2].gtagnm" -type "string" "left";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 5 "e[1]" "e[12]" "e[23]" "e[34]" "e[45]";
+	setAttr ".gtag[3].gtagnm" -type "string" "right";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 5 "e[10]" "e[21]" "e[32]" "e[43]" "e[54]";
+	setAttr ".gtag[4].gtagnm" -type "string" "rim";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 13 "e[0:2]" "e[4]" "e[6]" "e[8]" "e[10]" "e[12]" "e[21]" "e[23]" "e[32]" "e[34]" "e[43]" "e[45]" "e[54:59]";
+	setAttr ".pv" -type "double2" 0.5 0.70000000298023224 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 36 ".uvst[0].uvsp[0:35]" -type "float2" 0 0 0.2 0 0.40000001
+		 0 0.60000002 0 0.80000001 0 1 0 0 0.2 0.2 0.2 0.40000001 0.2 0.60000002 0.2 0.80000001
+		 0.2 1 0.2 0 0.40000001 0.2 0.40000001 0.40000001 0.40000001 0.60000002 0.40000001
+		 0.80000001 0.40000001 1 0.40000001 0 0.60000002 0.2 0.60000002 0.40000001 0.60000002
+		 0.60000002 0.60000002 0.80000001 0.60000002 1 0.60000002 0 0.80000001 0.2 0.80000001
+		 0.40000001 0.80000001 0.60000002 0.80000001 0.80000001 0.80000001 1 0.80000001 0
+		 1 0.2 1 0.40000001 1 0.60000002 1 0.80000001 1 1 1;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 36 ".pt[0:35]" -type "float3"  0.34081241 -0.049230736 0.39936447 
+		0.20448744 -0.049230736 0.39936447 0.068162464 -0.049230736 0.39936447 -0.068162493 
+		-0.049230736 0.39936447 -0.20448744 -0.049230736 0.39936447 -0.34081241 -0.049230736 
+		0.39936447 0.34081241 0.049230736 0.25052205 0.20448744 0.049230736 0.25052205 0.068162464 
+		0.049230736 0.25052205 -0.068162493 0.049230736 0.25052205 -0.20448744 0.049230736 
+		0.25052205 -0.34081241 0.049230736 0.25052205 0.40631223 0.05553427 0.10591555 0.25912055 
+		0.021390732 0.09591534 0.11192892 -0.012752844 0.08591488 -0.035262987 -0.046896677 
+		0.07591442 -0.18245472 -0.081040375 0.065914065 -0.32964638 -0.11518351 0.055913251 
+		0.28170824 -0.019964561 -0.094298907 0.13451634 -0.05410821 -0.10429928 -0.012675417 
+		-0.08825209 -0.11429968 -0.15986726 -0.12239575 -0.12430013 -0.30705899 -0.1565395 
+		-0.1343006 -0.45425045 -0.19068305 -0.14430097 0.37679967 0.21299092 -0.18752116 
+		0.22960815 0.178847 -0.19752163 0.082416303 0.14470385 -0.20752212 -0.064775914 0.11055978 
+		-0.2175227 -0.21196772 0.076416075 -0.22752304 -0.35915917 0.042272426 -0.23752366 
+		0.34252569 0.26458436 -0.34466144 0.19533408 0.23044153 -0.35466257 0.048141938 0.196297 
+		-0.36466241 -0.099050194 0.16215321 -0.3746632 -0.24624191 0.1280096 -0.38466316 
+		-0.39343366 0.093866028 -0.39466393;
+	setAttr -s 36 ".vt[0:35]"  -0.5 0 0.5 -0.30000001 0 0.5 -0.099999994 0 0.5
+		 0.10000002 0 0.5 0.30000001 0 0.5 0.5 0 0.5 -0.5 0 0.30000001 -0.30000001 0 0.30000001
+		 -0.099999994 0 0.30000001 0.10000002 0 0.30000001 0.30000001 0 0.30000001 0.5 0 0.30000001
+		 -0.5 0 0.099999994 -0.30000001 0 0.099999994 -0.099999994 0 0.099999994 0.10000002 0 0.099999994
+		 0.30000001 0 0.099999994 0.5 0 0.099999994 -0.5 0 -0.10000002 -0.30000001 0 -0.10000002
+		 -0.099999994 0 -0.10000002 0.10000002 0 -0.10000002 0.30000001 0 -0.10000002 0.5 0 -0.10000002
+		 -0.5 0 -0.30000001 -0.30000001 0 -0.30000001 -0.099999994 0 -0.30000001 0.10000002 0 -0.30000001
+		 0.30000001 0 -0.30000001 0.5 0 -0.30000001 -0.5 0 -0.5 -0.30000001 0 -0.5 -0.099999994 0 -0.5
+		 0.10000002 0 -0.5 0.30000001 0 -0.5 0.5 0 -0.5;
+	setAttr -s 60 ".ed[0:59]"  0 1 0 0 6 0 1 2 0 1 7 1 2 3 0 2 8 1 3 4 0
+		 3 9 1 4 5 0 4 10 1 5 11 0 6 7 1 6 12 0 7 8 1 7 13 1 8 9 1 8 14 1 9 10 1 9 15 1 10 11 1
+		 10 16 1 11 17 0 12 13 1 12 18 0 13 14 1 13 19 1 14 15 1 14 20 1 15 16 1 15 21 1 16 17 1
+		 16 22 1 17 23 0 18 19 1 18 24 0 19 20 1 19 25 1 20 21 1 20 26 1 21 22 1 21 27 1 22 23 1
+		 22 28 1 23 29 0 24 25 1 24 30 0 25 26 1 25 31 1 26 27 1 26 32 1 27 28 1 27 33 1 28 29 1
+		 28 34 1 29 35 0 30 31 0 31 32 0 32 33 0 33 34 0 34 35 0;
+	setAttr -s 25 -ch 100 ".fc[0:24]" -type "polyFaces" 
+		f 4 0 3 -12 -2
+		mu 0 4 0 1 7 6
+		f 4 2 5 -14 -4
+		mu 0 4 1 2 8 7
+		f 4 4 7 -16 -6
+		mu 0 4 2 3 9 8
+		f 4 6 9 -18 -8
+		mu 0 4 3 4 10 9
+		f 4 8 10 -20 -10
+		mu 0 4 4 5 11 10
+		f 4 11 14 -23 -13
+		mu 0 4 6 7 13 12
+		f 4 13 16 -25 -15
+		mu 0 4 7 8 14 13
+		f 4 15 18 -27 -17
+		mu 0 4 8 9 15 14
+		f 4 17 20 -29 -19
+		mu 0 4 9 10 16 15
+		f 4 19 21 -31 -21
+		mu 0 4 10 11 17 16
+		f 4 22 25 -34 -24
+		mu 0 4 12 13 19 18
+		f 4 24 27 -36 -26
+		mu 0 4 13 14 20 19
+		f 4 26 29 -38 -28
+		mu 0 4 14 15 21 20
+		f 4 28 31 -40 -30
+		mu 0 4 15 16 22 21
+		f 4 30 32 -42 -32
+		mu 0 4 16 17 23 22
+		f 4 33 36 -45 -35
+		mu 0 4 18 19 25 24
+		f 4 35 38 -47 -37
+		mu 0 4 19 20 26 25
+		f 4 37 40 -49 -39
+		mu 0 4 20 21 27 26
+		f 4 39 42 -51 -41
+		mu 0 4 21 22 28 27
+		f 4 41 43 -53 -43
+		mu 0 4 22 23 29 28
+		f 4 44 47 -56 -46
+		mu 0 4 24 25 31 30
+		f 4 46 49 -57 -48
+		mu 0 4 25 26 32 31
+		f 4 48 51 -58 -50
+		mu 0 4 26 27 33 32
+		f 4 50 53 -59 -52
+		mu 0 4 27 28 34 33
+		f 4 52 54 -60 -54
+		mu 0 4 28 29 35 34;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pSphere1";
 	rename -uid "EF4026D9-468A-7B73-09DB-B990FA4749B2";
 	setAttr ".t" -type "double3" 0.039582959862756784 1.5391321274091485 0.016920527878409836 ;
 	setAttr ".s" -type "double3" 0.09250289782463908 0.09250289782463908 0.09250289782463908 ;
-createNode mesh -n "pSphereShape1" -p "pSphere1";
+createNode transform -n "transform7" -p "pSphere1";
+	rename -uid "7C7670B6-439C-6D13-AD05-4AA16B2D5BDC";
+	setAttr ".v" no;
+createNode mesh -n "pSphereShape1" -p "transform7";
 	rename -uid "28159132-45DE-F77B-B961-AA974763B9C0";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:399]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -2367,140 +2555,6 @@ createNode mesh -n "pSphereShape1" -p "pSphere1";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "group11";
-	rename -uid "A7D425FB-463A-DC1D-F70D-A184DDA5296D";
-	setAttr ".t" -type "double3" -0.90111078360924846 0 0 ;
-	setAttr ".r" -type "double3" -53.760480073637808 -183.39818863854131 32.183726464092729 ;
-	setAttr ".rp" -type "double3" 0.46656085969422573 1.5421475474087856 0.29497148457037858 ;
-	setAttr ".rpt" -type "double3" -1.1324274851176597e-13 -2.2537527399890678e-14 1.1124434706744069e-13 ;
-	setAttr ".sp" -type "double3" 0.46656085969422573 1.5421475474087856 0.29497148457037858 ;
-createNode transform -n "pasted__group9" -p "group11";
-	rename -uid "AC66191D-482A-5D84-0A6C-51B9316A7379";
-	setAttr ".t" -type "double3" 0.25396528616082681 0.037135999203226522 0.79439058199258361 ;
-	setAttr ".r" -type "double3" 56.217332728527957 -130.37089718610508 -62.992420788962647 ;
-	setAttr ".rp" -type "double3" 0.21259557353340064 1.5050115482055586 -0.49941909742220775 ;
-	setAttr ".rpt" -type "double3" -1.6653345369377348e-15 4.9960036108132044e-16 2.6922908347160046e-15 ;
-	setAttr ".sp" -type "double3" 0.21259557353340064 1.5050115482055586 -0.49941909742220775 ;
-createNode transform -n "pasted__pasted__pPlane2" -p "|group11|pasted__group9";
-	rename -uid "BBC8CBE7-4AEA-7BBE-917D-458EED179777";
-	setAttr ".t" -type "double3" 0.19908872297477145 0.90765023711429182 -0.67272616443650468 ;
-	setAttr ".r" -type "double3" -19.192200566474479 -10.851484900028206 -20.471189227314522 ;
-	setAttr ".s" -type "double3" 0.52131449696087406 0.52131449696087406 0.52131449696087406 ;
-createNode mesh -n "pasted__pasted__pPlaneShape2" -p "|group11|pasted__group9|pasted__pasted__pPlane2";
-	rename -uid "9DD7A39B-46F8-6FE6-5D74-39B1F5EC55A4";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr -s 5 ".gtag";
-	setAttr ".gtag[0].gtagnm" -type "string" "back";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "e[55:59]";
-	setAttr ".gtag[1].gtagnm" -type "string" "front";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 5 "e[0]" "e[2]" "e[4]" "e[6]" "e[8]";
-	setAttr ".gtag[2].gtagnm" -type "string" "left";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 5 "e[1]" "e[12]" "e[23]" "e[34]" "e[45]";
-	setAttr ".gtag[3].gtagnm" -type "string" "right";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 5 "e[10]" "e[21]" "e[32]" "e[43]" "e[54]";
-	setAttr ".gtag[4].gtagnm" -type "string" "rim";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 13 "e[0:2]" "e[4]" "e[6]" "e[8]" "e[10]" "e[12]" "e[21]" "e[23]" "e[32]" "e[34]" "e[43]" "e[45]" "e[54:59]";
-	setAttr ".pv" -type "double2" 0.5 0.70000000298023224 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 36 ".uvst[0].uvsp[0:35]" -type "float2" 0 0 0.2 0 0.40000001
-		 0 0.60000002 0 0.80000001 0 1 0 0 0.2 0.2 0.2 0.40000001 0.2 0.60000002 0.2 0.80000001
-		 0.2 1 0.2 0 0.40000001 0.2 0.40000001 0.40000001 0.40000001 0.60000002 0.40000001
-		 0.80000001 0.40000001 1 0.40000001 0 0.60000002 0.2 0.60000002 0.40000001 0.60000002
-		 0.60000002 0.60000002 0.80000001 0.60000002 1 0.60000002 0 0.80000001 0.2 0.80000001
-		 0.40000001 0.80000001 0.60000002 0.80000001 0.80000001 0.80000001 1 0.80000001 0
-		 1 0.2 1 0.40000001 1 0.60000002 1 0.80000001 1 1 1;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 36 ".pt[0:35]" -type "float3"  0.34081241 -0.049230736 0.39936447 
-		0.20448744 -0.049230736 0.39936447 0.068162464 -0.049230736 0.39936447 -0.068162493 
-		-0.049230736 0.39936447 -0.20448744 -0.049230736 0.39936447 -0.34081241 -0.049230736 
-		0.39936447 0.34081241 0.049230736 0.25052205 0.20448744 0.049230736 0.25052205 0.068162464 
-		0.049230736 0.25052205 -0.068162493 0.049230736 0.25052205 -0.20448744 0.049230736 
-		0.25052205 -0.34081241 0.049230736 0.25052205 0.40631223 0.05553427 0.10591555 0.25912055 
-		0.021390732 0.09591534 0.11192892 -0.012752844 0.08591488 -0.035262987 -0.046896677 
-		0.07591442 -0.18245472 -0.081040375 0.065914065 -0.32964638 -0.11518351 0.055913251 
-		0.28170824 -0.019964561 -0.094298907 0.13451634 -0.05410821 -0.10429928 -0.012675417 
-		-0.08825209 -0.11429968 -0.15986726 -0.12239575 -0.12430013 -0.30705899 -0.1565395 
-		-0.1343006 -0.45425045 -0.19068305 -0.14430097 0.37679967 0.21299092 -0.18752116 
-		0.22960815 0.178847 -0.19752163 0.082416303 0.14470385 -0.20752212 -0.064775914 0.11055978 
-		-0.2175227 -0.21196772 0.076416075 -0.22752304 -0.35915917 0.042272426 -0.23752366 
-		0.34252569 0.26458436 -0.34466144 0.19533408 0.23044153 -0.35466257 0.048141938 0.196297 
-		-0.36466241 -0.099050194 0.16215321 -0.3746632 -0.24624191 0.1280096 -0.38466316 
-		-0.39343366 0.093866028 -0.39466393;
-	setAttr -s 36 ".vt[0:35]"  -0.5 0 0.5 -0.30000001 0 0.5 -0.099999994 0 0.5
-		 0.10000002 0 0.5 0.30000001 0 0.5 0.5 0 0.5 -0.5 0 0.30000001 -0.30000001 0 0.30000001
-		 -0.099999994 0 0.30000001 0.10000002 0 0.30000001 0.30000001 0 0.30000001 0.5 0 0.30000001
-		 -0.5 0 0.099999994 -0.30000001 0 0.099999994 -0.099999994 0 0.099999994 0.10000002 0 0.099999994
-		 0.30000001 0 0.099999994 0.5 0 0.099999994 -0.5 0 -0.10000002 -0.30000001 0 -0.10000002
-		 -0.099999994 0 -0.10000002 0.10000002 0 -0.10000002 0.30000001 0 -0.10000002 0.5 0 -0.10000002
-		 -0.5 0 -0.30000001 -0.30000001 0 -0.30000001 -0.099999994 0 -0.30000001 0.10000002 0 -0.30000001
-		 0.30000001 0 -0.30000001 0.5 0 -0.30000001 -0.5 0 -0.5 -0.30000001 0 -0.5 -0.099999994 0 -0.5
-		 0.10000002 0 -0.5 0.30000001 0 -0.5 0.5 0 -0.5;
-	setAttr -s 60 ".ed[0:59]"  0 1 0 0 6 0 1 2 0 1 7 1 2 3 0 2 8 1 3 4 0
-		 3 9 1 4 5 0 4 10 1 5 11 0 6 7 1 6 12 0 7 8 1 7 13 1 8 9 1 8 14 1 9 10 1 9 15 1 10 11 1
-		 10 16 1 11 17 0 12 13 1 12 18 0 13 14 1 13 19 1 14 15 1 14 20 1 15 16 1 15 21 1 16 17 1
-		 16 22 1 17 23 0 18 19 1 18 24 0 19 20 1 19 25 1 20 21 1 20 26 1 21 22 1 21 27 1 22 23 1
-		 22 28 1 23 29 0 24 25 1 24 30 0 25 26 1 25 31 1 26 27 1 26 32 1 27 28 1 27 33 1 28 29 1
-		 28 34 1 29 35 0 30 31 0 31 32 0 32 33 0 33 34 0 34 35 0;
-	setAttr -s 25 -ch 100 ".fc[0:24]" -type "polyFaces" 
-		f 4 0 3 -12 -2
-		mu 0 4 0 1 7 6
-		f 4 2 5 -14 -4
-		mu 0 4 1 2 8 7
-		f 4 4 7 -16 -6
-		mu 0 4 2 3 9 8
-		f 4 6 9 -18 -8
-		mu 0 4 3 4 10 9
-		f 4 8 10 -20 -10
-		mu 0 4 4 5 11 10
-		f 4 11 14 -23 -13
-		mu 0 4 6 7 13 12
-		f 4 13 16 -25 -15
-		mu 0 4 7 8 14 13
-		f 4 15 18 -27 -17
-		mu 0 4 8 9 15 14
-		f 4 17 20 -29 -19
-		mu 0 4 9 10 16 15
-		f 4 19 21 -31 -21
-		mu 0 4 10 11 17 16
-		f 4 22 25 -34 -24
-		mu 0 4 12 13 19 18
-		f 4 24 27 -36 -26
-		mu 0 4 13 14 20 19
-		f 4 26 29 -38 -28
-		mu 0 4 14 15 21 20
-		f 4 28 31 -40 -30
-		mu 0 4 15 16 22 21
-		f 4 30 32 -42 -32
-		mu 0 4 16 17 23 22
-		f 4 33 36 -45 -35
-		mu 0 4 18 19 25 24
-		f 4 35 38 -47 -37
-		mu 0 4 19 20 26 25
-		f 4 37 40 -49 -39
-		mu 0 4 20 21 27 26
-		f 4 39 42 -51 -41
-		mu 0 4 21 22 28 27
-		f 4 41 43 -53 -43
-		mu 0 4 22 23 29 28
-		f 4 44 47 -56 -46
-		mu 0 4 24 25 31 30
-		f 4 46 49 -57 -48
-		mu 0 4 25 26 32 31
-		f 4 48 51 -58 -50
-		mu 0 4 26 27 33 32
-		f 4 50 53 -59 -52
-		mu 0 4 27 28 34 33
-		f 4 52 54 -60 -54
-		mu 0 4 28 29 35 34;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "group12";
 	rename -uid "715463ED-4373-44B6-8F07-20947D2CA115";
 	setAttr ".t" -type "double3" -0.66483838638715009 0 0 ;
@@ -2526,9 +2580,14 @@ createNode transform -n "pasted__pasted__pasted__pPlane2" -p "pasted__pasted__gr
 	setAttr ".t" -type "double3" -0.62508054799036872 1.2631835930280737 -0.45107208653157149 ;
 	setAttr ".r" -type "double3" 1.8458435478255468 -10.851484900028225 -20.471189227314511 ;
 	setAttr ".s" -type "double3" 0.44237171056263047 0.44237171056263047 0.44237171056263047 ;
-createNode mesh -n "pasted__pasted__pasted__pPlaneShape2" -p "pasted__pasted__pasted__pPlane2";
+createNode transform -n "transform12" -p "pasted__pasted__pasted__pPlane2";
+	rename -uid "2FA8A979-4BD5-09ED-B33B-9BAB8969CEB1";
+	setAttr ".v" no;
+createNode mesh -n "pasted__pasted__pasted__pPlaneShape2" -p "transform12";
 	rename -uid "484A389A-451A-9AC5-B781-B1BB91C04234";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:24]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 5 ".gtag";
@@ -2640,21 +2699,36 @@ createNode mesh -n "pasted__pasted__pasted__pPlaneShape2" -p "pasted__pasted__pa
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "group11_pasted__group9_pasted__pasted__pPlane2";
+	rename -uid "7891BF98-4106-55CB-D5E5-41AD1A743CFD";
+	setAttr ".rp" -type "double3" -0.0057950615882873535 1.2129047189855011 -0.018654971366568684 ;
+	setAttr ".sp" -type "double3" -0.0057950615882873535 1.2129047189855011 -0.018654971366568684 ;
+createNode mesh -n "group11_pasted__group9_pasted__pasted__pPlane2Shape" -p "group11_pasted__group9_pasted__pasted__pPlane2";
+	rename -uid "42C807D0-470A-B458-8543-22BA55A81CB3";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "9A730385-4D32-6D46-5B4D-B3A4F1416B1B";
+	rename -uid "16F00A96-4396-DF03-E491-1C9BB1522FA8";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "E4E1F974-4532-8CD5-5D59-F6A64019CC0E";
+	rename -uid "B786FD64-4DBF-B1FF-244C-ABA3E16D1BA9";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "F198C4AF-4CD7-C448-6A4A-3B900553829A";
+	rename -uid "D20EFDE0-4256-32B2-87DD-378816D8BA57";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "95F392AB-44A3-B0C8-10AB-ED9618144513";
+	rename -uid "C5C01E7F-418E-2CBA-06E1-D4B53BB0910C";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "9E7E72D9-4606-E9A7-A60E-4A9C7A413923";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "706DEF53-4F77-B2EB-91DF-16B4A394ACCA";
+	rename -uid "22163B68-4ACF-5F60-7713-008FD9BB53A1";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "3B57D922-42E7-5489-9447-F8AA7AA50AE8";
 	setAttr ".g" yes;
@@ -2712,6 +2786,92 @@ createNode groupId -n "groupId14";
 createNode groupId -n "groupId15";
 	rename -uid "A15B387C-4156-13D7-6603-D6B91DFF24E8";
 	setAttr ".ihi" 0;
+createNode polyUnite -n "polyUnite1";
+	rename -uid "28FAA2F5-4ADA-F107-5EA2-5CAD4B818999";
+	setAttr -s 13 ".ip";
+	setAttr -s 13 ".im";
+createNode groupId -n "groupId16";
+	rename -uid "B356E584-4C2E-E945-9CD7-27AE96BC4925";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId17";
+	rename -uid "3EA5040F-4005-87C1-0250-96B91E8E4945";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId18";
+	rename -uid "37E8E3B6-4D42-58E9-4819-B2ABB2391BCE";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId19";
+	rename -uid "118309F4-4099-FED3-8505-AFB9767939BC";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId20";
+	rename -uid "1FD998DF-4F1E-5A8F-5962-AE87D73E2545";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId21";
+	rename -uid "550B86B3-4525-BA8C-6178-1E9066722FD9";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId22";
+	rename -uid "047EFDAF-4A79-9BAA-A0AF-918276E61040";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId23";
+	rename -uid "1552999B-443B-9D23-AB08-61AF150D182B";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId24";
+	rename -uid "09265EBB-4C4F-CD2D-E567-888774A2B92B";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId25";
+	rename -uid "44FA48D4-434B-3B01-0228-CFA1A61A848D";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId26";
+	rename -uid "6456B823-4192-6044-ED22-6E9FEE7498AE";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId27";
+	rename -uid "3519DE21-43D3-8CEA-301F-BAB266BD0A37";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId28";
+	rename -uid "BA44D28E-4E78-C985-DA88-1EBF110181B1";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId29";
+	rename -uid "6D180CB9-491D-C7F0-DCB0-6C8FB8D361F9";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId30";
+	rename -uid "CB89F90A-456D-76D0-5257-F1A80C1672D6";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId31";
+	rename -uid "0B16C934-431E-1EC7-3EB9-05BD74E8D9F6";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId32";
+	rename -uid "BC9454AF-4EB1-BCA6-43B1-7C90B4747208";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId33";
+	rename -uid "13D65705-44C9-AEFC-3300-4EA75D07CA81";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId34";
+	rename -uid "FA34AA9E-48F5-9373-792E-98BC073FCC4F";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId35";
+	rename -uid "3C1EE948-46BF-D5FD-193F-D6931F4C10D0";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId36";
+	rename -uid "D4E5158D-4865-20C4-DD56-349DDB570CF0";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId37";
+	rename -uid "55AF5DEC-4842-B17B-613B-1BA9FAA698AF";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId38";
+	rename -uid "F9908858-472F-E1F6-BB7C-2D84C07F4A3C";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId39";
+	rename -uid "72AF4439-4E5C-7468-C8F1-87A2C42BC6D7";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId40";
+	rename -uid "B1A0F558-48F8-6D76-3625-BBA3A978F790";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts1";
+	rename -uid "8E68E329-4BFD-884F-48DA-33946AD52FFE";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:650]";
+createNode groupId -n "groupId41";
+	rename -uid "853DF7CA-4877-18EA-CD3C-E49BEDF5CB5D";
+	setAttr ".ihi" 0;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -2737,8 +2897,9 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 14 ".dsm";
+	setAttr -s 28 ".dsm";
 	setAttr ".ro" yes;
+	setAttr -s 26 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
@@ -2759,36 +2920,188 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+connectAttr "groupId24.id" "pCubeShape1.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "pCubeShape1.iog.og[0].gco";
+connectAttr "groupId25.id" "pCubeShape1.ciog.cog[0].cgid";
+connectAttr "groupId38.id" "pPlaneShape1.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "pPlaneShape1.iog.og[0].gco";
+connectAttr "groupId39.id" "pPlaneShape1.ciog.cog[0].cgid";
 connectAttr "groupId15.id" "pasted__pCube4Shape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "pasted__pCube4Shape.iog.og[0].gco";
 connectAttr "groupId14.id" "pasted__pCube4Shape.ciog.cog[0].cgid";
+connectAttr "groupId36.id" "|group5|pasted__pPlane1|transform2|pasted__pPlaneShape1.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "|group5|pasted__pPlane1|transform2|pasted__pPlaneShape1.iog.og[0].gco"
+		;
+connectAttr "groupId37.id" "|group5|pasted__pPlane1|transform2|pasted__pPlaneShape1.ciog.cog[0].cgid"
+		;
+connectAttr "groupId22.id" "|group6|pasted__group5|pasted__pasted__pPlane1|transform10|pasted__pasted__pPlaneShape1.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "|group6|pasted__group5|pasted__pasted__pPlane1|transform10|pasted__pasted__pPlaneShape1.iog.og[0].gco"
+		;
+connectAttr "groupId23.id" "|group6|pasted__group5|pasted__pasted__pPlane1|transform10|pasted__pasted__pPlaneShape1.ciog.cog[0].cgid"
+		;
+connectAttr "groupId32.id" "|group7|pasted__pPlane1|transform4|pasted__pPlaneShape1.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "|group7|pasted__pPlane1|transform4|pasted__pPlaneShape1.iog.og[0].gco"
+		;
+connectAttr "groupId33.id" "|group7|pasted__pPlane1|transform4|pasted__pPlaneShape1.ciog.cog[0].cgid"
+		;
+connectAttr "groupId20.id" "|group8|pasted__group5|pasted__pasted__pPlane1|transform11|pasted__pasted__pPlaneShape1.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "|group8|pasted__group5|pasted__pasted__pPlane1|transform11|pasted__pasted__pPlaneShape1.iog.og[0].gco"
+		;
+connectAttr "groupId21.id" "|group8|pasted__group5|pasted__pasted__pPlane1|transform11|pasted__pasted__pPlaneShape1.ciog.cog[0].cgid"
+		;
+connectAttr "groupId30.id" "pasted__pPlaneShape2.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "pasted__pPlaneShape2.iog.og[0].gco";
+connectAttr "groupId31.id" "pasted__pPlaneShape2.ciog.cog[0].cgid";
+connectAttr "groupId34.id" "pPlaneShape2.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "pPlaneShape2.iog.og[0].gco";
+connectAttr "groupId35.id" "pPlaneShape2.ciog.cog[0].cgid";
+connectAttr "groupId28.id" "|group10|pasted__group9|pasted__pasted__pPlane2|transform6|pasted__pasted__pPlaneShape2.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "|group10|pasted__group9|pasted__pasted__pPlane2|transform6|pasted__pasted__pPlaneShape2.iog.og[0].gco"
+		;
+connectAttr "groupId29.id" "|group10|pasted__group9|pasted__pasted__pPlane2|transform6|pasted__pasted__pPlaneShape2.ciog.cog[0].cgid"
+		;
+connectAttr "groupId16.id" "|group11|pasted__group9|pasted__pasted__pPlane2|transform13|pasted__pasted__pPlaneShape2.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "|group11|pasted__group9|pasted__pasted__pPlane2|transform13|pasted__pasted__pPlaneShape2.iog.og[0].gco"
+		;
+connectAttr "groupId17.id" "|group11|pasted__group9|pasted__pasted__pPlane2|transform13|pasted__pasted__pPlaneShape2.ciog.cog[0].cgid"
+		;
+connectAttr "groupId26.id" "pSphereShape1.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "pSphereShape1.iog.og[0].gco";
+connectAttr "groupId27.id" "pSphereShape1.ciog.cog[0].cgid";
+connectAttr "groupId18.id" "pasted__pasted__pasted__pPlaneShape2.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "pasted__pasted__pasted__pPlaneShape2.iog.og[0].gco"
+		;
+connectAttr "groupId19.id" "pasted__pasted__pasted__pPlaneShape2.ciog.cog[0].cgid"
+		;
+connectAttr "groupParts1.og" "group11_pasted__group9_pasted__pasted__pPlane2Shape.i"
+		;
+connectAttr "groupId40.id" "group11_pasted__group9_pasted__pasted__pPlane2Shape.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "group11_pasted__group9_pasted__pasted__pPlane2Shape.iog.og[0].gco"
+		;
+connectAttr "groupId41.id" "group11_pasted__group9_pasted__pasted__pPlane2Shape.ciog.cog[0].cgid"
+		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
+connectAttr "|group11|pasted__group9|pasted__pasted__pPlane2|transform13|pasted__pasted__pPlaneShape2.o" "polyUnite1.ip[0]"
+		;
+connectAttr "pasted__pasted__pasted__pPlaneShape2.o" "polyUnite1.ip[1]";
+connectAttr "|group8|pasted__group5|pasted__pasted__pPlane1|transform11|pasted__pasted__pPlaneShape1.o" "polyUnite1.ip[2]"
+		;
+connectAttr "|group6|pasted__group5|pasted__pasted__pPlane1|transform10|pasted__pasted__pPlaneShape1.o" "polyUnite1.ip[3]"
+		;
+connectAttr "pasted__pCube4Shape.o" "polyUnite1.ip[4]";
+connectAttr "pCubeShape1.o" "polyUnite1.ip[5]";
+connectAttr "pSphereShape1.o" "polyUnite1.ip[6]";
+connectAttr "|group10|pasted__group9|pasted__pasted__pPlane2|transform6|pasted__pasted__pPlaneShape2.o" "polyUnite1.ip[7]"
+		;
+connectAttr "pasted__pPlaneShape2.o" "polyUnite1.ip[8]";
+connectAttr "|group7|pasted__pPlane1|transform4|pasted__pPlaneShape1.o" "polyUnite1.ip[9]"
+		;
+connectAttr "pPlaneShape2.o" "polyUnite1.ip[10]";
+connectAttr "|group5|pasted__pPlane1|transform2|pasted__pPlaneShape1.o" "polyUnite1.ip[11]"
+		;
+connectAttr "pPlaneShape1.o" "polyUnite1.ip[12]";
+connectAttr "|group11|pasted__group9|pasted__pasted__pPlane2|transform13|pasted__pasted__pPlaneShape2.wm" "polyUnite1.im[0]"
+		;
+connectAttr "pasted__pasted__pasted__pPlaneShape2.wm" "polyUnite1.im[1]";
+connectAttr "|group8|pasted__group5|pasted__pasted__pPlane1|transform11|pasted__pasted__pPlaneShape1.wm" "polyUnite1.im[2]"
+		;
+connectAttr "|group6|pasted__group5|pasted__pasted__pPlane1|transform10|pasted__pasted__pPlaneShape1.wm" "polyUnite1.im[3]"
+		;
+connectAttr "pasted__pCube4Shape.wm" "polyUnite1.im[4]";
+connectAttr "pCubeShape1.wm" "polyUnite1.im[5]";
+connectAttr "pSphereShape1.wm" "polyUnite1.im[6]";
+connectAttr "|group10|pasted__group9|pasted__pasted__pPlane2|transform6|pasted__pasted__pPlaneShape2.wm" "polyUnite1.im[7]"
+		;
+connectAttr "pasted__pPlaneShape2.wm" "polyUnite1.im[8]";
+connectAttr "|group7|pasted__pPlane1|transform4|pasted__pPlaneShape1.wm" "polyUnite1.im[9]"
+		;
+connectAttr "pPlaneShape2.wm" "polyUnite1.im[10]";
+connectAttr "|group5|pasted__pPlane1|transform2|pasted__pPlaneShape1.wm" "polyUnite1.im[11]"
+		;
+connectAttr "pPlaneShape1.wm" "polyUnite1.im[12]";
+connectAttr "polyUnite1.out" "groupParts1.ig";
+connectAttr "groupId40.id" "groupParts1.gi";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "pPlaneShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pasted__pCube4Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "|group5|pasted__pPlane1|pasted__pPlaneShape1.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group6|pasted__group5|pasted__pasted__pPlane1|pasted__pasted__pPlaneShape1.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group7|pasted__pPlane1|pasted__pPlaneShape1.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|group8|pasted__group5|pasted__pasted__pPlane1|pasted__pasted__pPlaneShape1.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "pPlaneShape2.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pPlaneShape2.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|group10|pasted__group9|pasted__pasted__pPlane2|pasted__pasted__pPlaneShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "pSphereShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|group11|pasted__group9|pasted__pasted__pPlane2|pasted__pasted__pPlaneShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "pasted__pasted__pasted__pPlaneShape2.iog" ":initialShadingGroup.dsm"
-		 -na;
 connectAttr "pasted__pCube4Shape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "|group11|pasted__group9|pasted__pasted__pPlane2|transform13|pasted__pasted__pPlaneShape2.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group11|pasted__group9|pasted__pasted__pPlane2|transform13|pasted__pasted__pPlaneShape2.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pasted__pasted__pasted__pPlaneShape2.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pasted__pasted__pasted__pPlaneShape2.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group8|pasted__group5|pasted__pasted__pPlane1|transform11|pasted__pasted__pPlaneShape1.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group8|pasted__group5|pasted__pasted__pPlane1|transform11|pasted__pasted__pPlaneShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group6|pasted__group5|pasted__pasted__pPlane1|transform10|pasted__pasted__pPlaneShape1.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group6|pasted__group5|pasted__pasted__pPlane1|transform10|pasted__pasted__pPlaneShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pCubeShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pCubeShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pSphereShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pSphereShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "|group10|pasted__group9|pasted__pasted__pPlane2|transform6|pasted__pasted__pPlaneShape2.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group10|pasted__group9|pasted__pasted__pPlane2|transform6|pasted__pasted__pPlaneShape2.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pasted__pPlaneShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pasted__pPlaneShape2.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "|group7|pasted__pPlane1|transform4|pasted__pPlaneShape1.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group7|pasted__pPlane1|transform4|pasted__pPlaneShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pPlaneShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pPlaneShape2.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "|group5|pasted__pPlane1|transform2|pasted__pPlaneShape1.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group5|pasted__pPlane1|transform2|pasted__pPlaneShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pPlaneShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pPlaneShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "group11_pasted__group9_pasted__pasted__pPlane2Shape.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "group11_pasted__group9_pasted__pasted__pPlane2Shape.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
 connectAttr "groupId15.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId16.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId17.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId18.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId19.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId20.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId21.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId22.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId23.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId24.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId25.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId26.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId27.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId28.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId29.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId30.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId31.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId32.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId33.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId34.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId35.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId36.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId37.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId38.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId39.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId40.msg" ":initialShadingGroup.gn" -na;
 // End of OrganicProp.ma
