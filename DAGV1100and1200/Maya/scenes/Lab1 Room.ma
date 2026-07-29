@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: Lab1 Room.ma
-//Last modified: Wed, Jul 29, 2026 12:02:56 AM
+//Last modified: Wed, Jul 29, 2026 01:20:42 PM
 //Codeset: 1252
 file -rdi 1 -ns "Unit4_CurvesLab" -rfn "Unit4_CurvesLabRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Unit4_CurvesLab.ma";
@@ -57,17 +57,17 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202603302215-e16e754b0e";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "7A45AC7E-49BC-1588-A57B-528C4F92BD25";
+fileInfo "UUID" "92B77FFF-48BB-5BB1-D2EB-0193A4DE1ACA";
 createNode transform -s -n "persp";
 	rename -uid "69EBF08C-4822-BF76-98E9-3992E6EC24F6";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -13.874676353082744 17.26679350785091 -28.802724548436331 ;
-	setAttr ".r" -type "double3" -20.738352729087691 207.00000000010479 0 ;
+	setAttr ".t" -type "double3" -4.544013053681403 13.538762900261329 -17.751161622115514 ;
+	setAttr ".r" -type "double3" -33.338352729084058 239.00000000005963 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "51A29084-4A9C-9A28-059F-E9A2D20FCBF1";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 21.590018501695919;
+	setAttr ".coi" 8.9990332450931696;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -9397,15 +9397,15 @@ createNode mesh -n "Unit4_CurvesLab1:dirtShapeShape" -p "Unit4_CurvesLab1:dirtSh
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "816C4FB6-4430-E47D-6273-B78E0FFACDF6";
-	setAttr -s 6 ".lnk";
-	setAttr -s 6 ".slnk";
+	rename -uid "A207722D-4F6B-6090-41D6-23A7A91FEC68";
+	setAttr -s 4 ".lnk";
+	setAttr -s 4 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "35920317-406B-4537-5A18-CF83E85A05CB";
+	rename -uid "73FDE213-499C-BF37-C510-818610BA6008";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "6922E445-4A42-E600-2187-5699422483F3";
+	rename -uid "2FFD2D74-4269-3556-AD02-1C89097B25E7";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "569F4E0C-4A59-8258-6FEC-9F8A52BECB8F";
+	rename -uid "21CE7DB9-4C80-736F-7179-2DB031683982";
 	setAttr ".cdl" 2;
 	setAttr -s 3 ".dli[1:2]"  1 2;
 	setAttr -s 3 ".dli";
@@ -9413,7 +9413,7 @@ createNode displayLayer -n "defaultLayer";
 	rename -uid "38A97ADC-4D5E-4FBC-F92C-71B7514EE870";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "91F2EC0B-447E-B830-FB0C-038B854D37D0";
+	rename -uid "D8902FBA-44E9-47AB-75C9-B58F0554F08E";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "82594AA2-416F-A56F-B89A-8197F4A1C1AC";
 	setAttr ".g" yes;
@@ -11807,7 +11807,7 @@ createNode reference -n "OrganicPropRN1";
 		5 3 "OrganicPropRN1" "OrganicProp1:polyAutoProj1.output" "OrganicPropRN1.placeHolderList[13]" 
 		"OrganicProp1:group11_pasted__group9_pasted__pasted__pPlane2Shape.i"
 		"OrganicPropRN1" 16
-		2 "|OrganicProp1:persp1" "translate" " -type \"double3\" 67.89826995918622288 3.93488259817963426 0.97899225476375085"
+		2 "|OrganicProp1:persp1" "translate" " -type \"double3\" 67.89826995918622288 24.66236388976369653 0.97899225476375085"
 		
 		2 "|OrganicProp1:group11_pasted__group9_pasted__pasted__pPlane2" "rotatePivotTranslate" 
 		" -type \"double3\" 0 0 0"
@@ -26022,7 +26022,7 @@ createNode reference -n "OrganicPropRN2";
 		"OrganicPropRN2"
 		"OrganicPropRN2" 0
 		"OrganicPropRN2" 25
-		2 "|OrganicProp2:persp1" "translate" " -type \"double3\" 26.18973241530256146 3.93488259817963426 0.97899225476375085"
+		2 "|OrganicProp2:persp1" "translate" " -type \"double3\" 26.18973241530256146 21.98242827848979175 0.97899225476375085"
 		
 		2 "|OrganicProp2:persp1" "rotate" " -type \"double3\" -24.33835287743876918 79.3999999998850825 0"
 		
@@ -26221,7 +26221,6 @@ select -ne :defaultRenderingList1;
 	setAttr -s 14 ".r";
 select -ne :defaultTextureList1;
 	setAttr -s 5 ".tx";
-select -ne :lambert1;
 select -ne :standardSurface1;
 	setAttr ".sr" 0.5;
 select -ne :openPBR_shader1;
