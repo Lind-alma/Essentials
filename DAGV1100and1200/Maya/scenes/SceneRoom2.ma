@@ -1,13 +1,14 @@
 //Maya ASCII 2027 scene
 //Name: SceneRoom2.ma
-//Last modified: Wed, Jul 29, 2026 10:57:43 PM
+//Last modified: Wed, Jul 29, 2026 11:31:09 PM
 //Codeset: 1252
 file -rdi 1 -ns "Asset1" -rfn "Asset1RN" -op "v=0;" -typ "mayaAscii" "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes//Asset1.ma";
 file -rdi 1 -ns "Asset2" -rfn "Asset2RN" -op "v=0;" -typ "mayaAscii" "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes//Asset2.ma";
+file -rdi 1 -ns "Asset3" -rfn "Asset3RN" -op "v=0;" -typ "mayaAscii" "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes//Asset3.ma";
 file -r -ns "Asset1" -dr 1 -rfn "Asset1RN" -op "v=0;" -typ "mayaAscii" "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes//Asset1.ma";
 file -r -ns "Asset2" -dr 1 -rfn "Asset2RN" -op "v=0;" -typ "mayaAscii" "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes//Asset2.ma";
+file -r -ns "Asset3" -dr 1 -rfn "Asset3RN" -op "v=0;" -typ "mayaAscii" "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes//Asset3.ma";
 requires maya "2027";
-requires "mtoa" "5.6.0";
 requires "mtoa" "5.6.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
@@ -15,17 +16,17 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202603302215-e16e754b0e";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "639F1792-44C2-FD6B-37CD-D5871F55FE51";
+fileInfo "UUID" "091860A2-4286-B751-5630-6BA13685CEFF";
 createNode transform -s -n "persp";
 	rename -uid "44624AF5-435A-1650-C206-01B0454BDE78";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 5.2237605093891899 2.1810018483611917 1.8490964342693115 ;
-	setAttr ".r" -type "double3" -15.938352729593248 86.600000000000918 0 ;
+	setAttr ".t" -type "double3" 4.3933173716384788 2.1875971147046016 2.9314057562623486 ;
+	setAttr ".r" -type "double3" -18.338352729593826 76.999999999999787 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "CA69449A-47E6-7C03-0934-3F8A6F6A2C08";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 6.6466774214473308;
+	setAttr ".coi" 5.5995627957568512;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -81,20 +82,20 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "33301FB5-4850-44DF-F509-4E9EED3AACC2";
+	rename -uid "7CF0269F-4397-D668-8C50-94A48CB282DF";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "622ECB56-44B2-C412-B7CF-58B2279B8C9D";
+	rename -uid "0E0CCC0D-44C1-E6B1-498D-22B9D85FE809";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "E9DC1BD1-462D-FE04-2F81-7DB3F0D3A0BD";
+	rename -uid "700A8BD9-4D59-939B-1045-969AD28B22BE";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B2AE6B59-4575-642D-0725-268284CF076C";
+	rename -uid "983ABF53-4E45-DD25-4F10-C39C8DA9CC27";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "B3E91CAC-463B-EA3C-9D42-CFB72EE4A606";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "2A0FE3C0-41EB-C88A-CE72-0B94C857589D";
+	rename -uid "DA6A1DEF-4F29-9FE7-C0D6-D0B50AEC2606";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "0FF75670-4928-93EE-465C-E789FF31F138";
 	setAttr ".g" yes;
@@ -160,11 +161,26 @@ createNode reference -n "Asset2RN";
 		"Asset2RN"
 		"Asset2RN" 0
 		"Asset2RN" 3
-		2 "|Asset2:BoomBox" "translate" " -type \"double3\" -1.44591303210316635 -0.33033839663075004 2.19088011672123617"
+		2 "|Asset2:BoomBox" "translate" " -type \"double3\" -1.37704647253373125 -0.30978319780889918 1.86229857729945669"
 		
 		2 "|Asset2:BoomBox" "rotate" " -type \"double3\" 0 8.67749497454768104 0"
 		
 		2 "|Asset2:BoomBox" "rotatePivotTranslate" " -type \"double3\" 0 0 0";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "Asset3RN";
+	rename -uid "26EEC37C-4713-4909-33C4-6B8ED38AB054";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Asset3RN"
+		"Asset3RN" 0
+		"Asset3RN" 4
+		2 "|Asset3:Phone" "translate" " -type \"double3\" -0.52256078946348228 -3.27838184461823134 3.05275442948376163"
+		
+		2 "|Asset3:Phone" "rotate" " -type \"double3\" -7.06647324275880084 -6.23790533182856599 29.65297173621907234"
+		
+		2 "|Asset3:Phone" "scale" " -type \"double3\" 0.26522589759312049 0.26522589759312049 0.26522589759312049"
+		
+		2 "|Asset3:Phone" "rotatePivotTranslate" " -type \"double3\" 0 0 0";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 select -ne :time1;
@@ -185,24 +201,24 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 2 ".u";
+	setAttr -s 3 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 3 ".r";
+	setAttr -s 4 ".r";
 select -ne :defaultTextureList1;
-	setAttr -s 2 ".tx";
+	setAttr -s 3 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :openPBR_shader1;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 3 ".dsm";
+	setAttr -s 5 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 2 ".gn";
+	setAttr -s 3 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :initialMaterialInfo;
-	setAttr -s 2 ".t";
+	setAttr -s 3 ".t";
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr ".ren" -type "string" "arnold";
