@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: Lab1 Room.ma
-//Last modified: Wed, Jul 29, 2026 01:20:42 PM
+//Last modified: Wed, Jul 29, 2026 07:34:10 PM
 //Codeset: 1252
 file -rdi 1 -ns "Unit4_CurvesLab" -rfn "Unit4_CurvesLabRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Unit4_CurvesLab.ma";
@@ -57,17 +57,17 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202603302215-e16e754b0e";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "92B77FFF-48BB-5BB1-D2EB-0193A4DE1ACA";
+fileInfo "UUID" "7AEE3A1A-4234-B78B-2877-7AA7B5BF89B2";
 createNode transform -s -n "persp";
 	rename -uid "69EBF08C-4822-BF76-98E9-3992E6EC24F6";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -4.544013053681403 13.538762900261329 -17.751161622115514 ;
-	setAttr ".r" -type "double3" -33.338352729084058 239.00000000005963 0 ;
+	setAttr ".t" -type "double3" 1.5399514345361696 11.294889383085648 -24.57563177742923 ;
+	setAttr ".r" -type "double3" -26.738352729060651 200.60000000002358 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "51A29084-4A9C-9A28-059F-E9A2D20FCBF1";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 8.9990332450931696;
+	setAttr ".coi" 25.029251118754555;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -6602,6 +6602,7 @@ createNode transform -n "pasted__group" -p "group1";
 	setAttr ".sp" -type "double3" 3.152917648791941 3.0227818790912466 -6.9500161588361733 ;
 createNode transform -n "Chair2:ChairMesh" -p "pasted__group";
 	rename -uid "3ED0B01B-47B9-8882-A586-13A25B612D43";
+	setAttr ".t" -type "double3" 0.24403353956912827 0 0.032892507196490721 ;
 	setAttr ".rp" -type "double3" 3.3271097914146703 8.3266726846886741e-17 -6.9529902637630743 ;
 	setAttr ".sp" -type "double3" 3.3271097914146814 -8.8540286213856234e-15 -6.9529902637629935 ;
 createNode mesh -n "Chair2:ChairMeshShape" -p "Chair2:ChairMesh";
@@ -9397,15 +9398,15 @@ createNode mesh -n "Unit4_CurvesLab1:dirtShapeShape" -p "Unit4_CurvesLab1:dirtSh
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "A207722D-4F6B-6090-41D6-23A7A91FEC68";
-	setAttr -s 4 ".lnk";
-	setAttr -s 4 ".slnk";
+	rename -uid "509DA8A7-473E-50C8-5219-AFBDF9AED868";
+	setAttr -s 6 ".lnk";
+	setAttr -s 6 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "73FDE213-499C-BF37-C510-818610BA6008";
+	rename -uid "A7CDF5DC-44BF-5529-BB2F-FB9B0E3BFA42";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "2FFD2D74-4269-3556-AD02-1C89097B25E7";
+	rename -uid "FC1868F0-479D-4380-4995-AE81A7EF5857";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "21CE7DB9-4C80-736F-7179-2DB031683982";
+	rename -uid "5EEA341B-4263-8776-7CBF-8D97EF9516CB";
 	setAttr ".cdl" 2;
 	setAttr -s 3 ".dli[1:2]"  1 2;
 	setAttr -s 3 ".dli";
@@ -9413,7 +9414,7 @@ createNode displayLayer -n "defaultLayer";
 	rename -uid "38A97ADC-4D5E-4FBC-F92C-71B7514EE870";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "D8902FBA-44E9-47AB-75C9-B58F0554F08E";
+	rename -uid "5F41F0D7-4315-BFDD-4831-D38A09CC2404";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "82594AA2-416F-A56F-B89A-8197F4A1C1AC";
 	setAttr ".g" yes;
@@ -11602,7 +11603,7 @@ createNode reference -n "SofaRN1";
 	setAttr ".fn[1]" -type "string" "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes//Sofa.ma{1}";
 	setAttr ".fn[2]" -type "string" "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes//Sofa.ma{1}";
 	setAttr ".fn[3]" -type "string" "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes//Sofa.ma{1}";
-	setAttr ".fn[4]" -type "string" "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Sofa.ma{1}";
+	setAttr ".fn[4]" -type "string" "C:/Users/likya/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes//Sofa.ma{1}";
 	setAttr -s 3 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
